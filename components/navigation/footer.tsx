@@ -1,6 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { navLinks } from "@/data/nav-links"
+import { FOOTER_CONTENT } from "@/data/footer-content"
 
 export function Footer() {
   return (
@@ -17,18 +18,17 @@ export function Footer() {
                 className="rounded-full bg-white/10 p-1"
               />
               <div>
-                <h3 className="font-bold text-base">SUPAP</h3>
-                <p className="text-xs text-white/70">Sociedad Uruguaya</p>
+                <h3 className="font-bold text-base">{FOOTER_CONTENT.organization.name}</h3>
+                <p className="text-xs text-white/70">{FOOTER_CONTENT.organization.tagline}</p>
               </div>
             </div>
             <p className="text-white/70 text-sm leading-relaxed">
-              Promoviendo el uso responsable y terapéutico de sustancias psicodélicas en el contexto
-              de la salud mental.
+              {FOOTER_CONTENT.organization.description}
             </p>
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4 text-base">Enlaces</h4>
+            <h4 className="font-semibold mb-4 text-base">{FOOTER_CONTENT.sections.links}</h4>
             <ul className="space-y-2 text-sm">
               {navLinks.map((link) => (
                 <li key={link.id}>
@@ -44,36 +44,33 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4 text-base">Contacto</h4>
+            <h4 className="font-semibold mb-4 text-base">{FOOTER_CONTENT.sections.contact}</h4>
             <div className="space-y-2 text-sm text-white/70">
               <p>
                 <a
-                  href="mailto:supap.eventos@gmail.com"
+                  href={`mailto:${FOOTER_CONTENT.contact.email}`}
                   className="hover:text-white transition-colors"
                 >
-                  supap.eventos@gmail.com
+                  {FOOTER_CONTENT.contact.email}
                 </a>
               </p>
               <p>
                 <a
-                  href="https://instagram.com/supap.uy"
+                  href={FOOTER_CONTENT.contact.instagramUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-white transition-colors"
                 >
-                  @supap.uy
+                  {FOOTER_CONTENT.contact.instagram}
                 </a>
               </p>
-              <p>Uruguay</p>
+              <p>{FOOTER_CONTENT.contact.country}</p>
             </div>
           </div>
         </div>
 
         <div className="border-t border-white/20 pt-8 text-center text-sm text-white/70">
-          <p>
-            &copy; 2025 SUPAP - Sociedad Uruguaya de Psicoterapias Asistidas por Psicodélicos y
-            Enteógenos
-          </p>
+          <p>&copy; {FOOTER_CONTENT.copyright}</p>
         </div>
       </div>
     </footer>
