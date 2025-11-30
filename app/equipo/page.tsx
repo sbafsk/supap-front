@@ -81,6 +81,64 @@ export default function TeamPage() {
         </div>
       </section>
 
+      {/* Board Members Section */}
+      {TEAM_PAGE.boardMembers.members.length > 0 && (
+        <section className="py-20 md:py-28 bg-muted/30">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto text-center mb-16 md:mb-20">
+              <Badge className="mx-auto mb-4 px-4 py-1.5 bg-primary/10 text-primary border-primary/20">
+                {TEAM_PAGE.boardMembers.badge}
+              </Badge>
+              <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground">
+                {TEAM_PAGE.boardMembers.title}
+              </h2>
+              <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+                {TEAM_PAGE.boardMembers.description}
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+              {TEAM_PAGE.boardMembers.members.map((member, idx) => (
+                <Card
+                  key={idx}
+                  className="border-0 shadow-lg hover:shadow-xl transition-all duration-300"
+                >
+                  <CardHeader className="space-y-4">
+                    <div className="w-32 h-32 mx-auto rounded-full overflow-hidden bg-gradient-to-br from-primary/20 to-secondary/20">
+                      {member.image ? (
+                        <img
+                          src={member.image}
+                          alt={member.name}
+                          className="w-full h-full object-cover"
+                        />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center text-4xl font-bold text-primary">
+                          {member.name.charAt(0)}
+                        </div>
+                      )}
+                    </div>
+                    <div className="text-center">
+                      <CardTitle className="text-xl mb-1">{member.name}</CardTitle>
+                      <Badge
+                        variant="outline"
+                        className="bg-primary/10 text-primary border-primary/20"
+                      >
+                        {member.role}
+                      </Badge>
+                    </div>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className="text-base leading-relaxed text-center">
+                      {member.bio}
+                    </CardDescription>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Gallery Section */}
       <section id="gallery" className="py-20 md:py-28 bg-muted/30">
         <div className="container mx-auto px-4">

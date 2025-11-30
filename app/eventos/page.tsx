@@ -10,7 +10,6 @@ import { EVENTS_PAGE } from "@/data/events-content"
 import { COMMON_LABELS } from "@/data/common-labels"
 
 export default function EventsPage() {
-
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
@@ -179,9 +178,7 @@ export default function EventsPage() {
               <Badge className="mx-auto mb-4 px-4 py-1.5 bg-primary/10 text-primary border-primary/20">
                 {EVENTS_PAGE.newsletter.badge}
               </Badge>
-              <CardTitle className="text-3xl md:text-4xl">
-                {EVENTS_PAGE.newsletter.title}
-              </CardTitle>
+              <CardTitle className="text-3xl md:text-4xl">{EVENTS_PAGE.newsletter.title}</CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
               <p className="text-center text-muted-foreground leading-relaxed">

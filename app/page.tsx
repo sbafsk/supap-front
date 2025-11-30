@@ -166,7 +166,9 @@ export default function HomePage() {
               <CardHeader className="bg-gradient-to-r from-primary to-secondary text-white rounded-t-lg">
                 <div className="flex items-center gap-2 mb-2">
                   <Calendar className="h-5 w-5" />
-                  <span className="text-sm font-medium">{HOME_PAGE.events.upcomingEvent.badge}</span>
+                  <span className="text-sm font-medium">
+                    {HOME_PAGE.events.upcomingEvent.badge}
+                  </span>
                 </div>
                 <CardTitle className="text-xl">{HOME_PAGE.events.upcomingEvent.title}</CardTitle>
               </CardHeader>
@@ -174,7 +176,9 @@ export default function HomePage() {
                 <div className="space-y-4">
                   <div className="flex items-start gap-3 text-muted-foreground">
                     <Calendar className="h-5 w-5 mt-0.5 flex-shrink-0 text-primary" />
-                    <span className="text-sm md:text-base">{HOME_PAGE.events.upcomingEvent.date}</span>
+                    <span className="text-sm md:text-base">
+                      {HOME_PAGE.events.upcomingEvent.date}
+                    </span>
                   </div>
                   <div className="flex items-start gap-3 text-muted-foreground">
                     <MapPin className="h-5 w-5 mt-0.5 flex-shrink-0 text-primary" />

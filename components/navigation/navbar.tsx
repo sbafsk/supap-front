@@ -54,10 +54,11 @@ export function Navbar() {
                 key={link.id}
                 href={link.href}
                 onClick={handleNavClick}
-                className={`transition-colors font-medium ${isActive(link.href)
+                className={`transition-colors font-medium ${
+                  isActive(link.href)
                     ? "text-primary font-bold"
                     : "text-foreground/70 hover:text-primary"
-                  }`}
+                }`}
               >
                 {link.label}
               </Link>
@@ -91,10 +92,11 @@ export function Navbar() {
                 key={link.id}
                 href={link.href}
                 onClick={handleNavClick}
-                className={`block w-full text-left px-4 py-2 rounded-lg transition-colors font-medium ${isActive(link.href)
+                className={`block w-full text-left px-4 py-2 rounded-lg transition-colors font-medium ${
+                  isActive(link.href)
                     ? "text-primary bg-muted font-bold"
                     : "text-foreground/70 hover:text-primary hover:bg-muted"
-                  }`}
+                }`}
               >
                 {link.label}
               </Link>
