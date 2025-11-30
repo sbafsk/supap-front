@@ -7,62 +7,10 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge"
 import { GalleryGrid } from "@/components/gallery/gallery-grid"
 import { galleryImages } from "@/data/gallery-images"
-import { Users, Shield, Briefcase, Heart, Target, Handshake, Mail } from "lucide-react"
+import { Mail } from "lucide-react"
+import { TEAM_PAGE } from "@/data/team-content"
 
 export default function TeamPage() {
-  const teamStructure = [
-    {
-      title: "Comisión Directiva",
-      icon: Users,
-      description: "Dirección estratégica y gestión general de la organización",
-      members: "10 miembros titulares y suplentes",
-      color: "from-primary/20 to-primary/10",
-      iconColor: "text-primary",
-    },
-    {
-      title: "Comisión Fiscal",
-      icon: Shield,
-      description: "Supervisión y control de fondos y operaciones",
-      members: "6 miembros titulares y suplentes",
-      color: "from-secondary/20 to-secondary/10",
-      iconColor: "text-secondary",
-    },
-    {
-      title: "Comisiones de Trabajo",
-      icon: Briefcase,
-      description: "7 comisiones especializadas que impulsan nuestras actividades",
-      members:
-        "Comunicación • Académica • Reducción de Daños • Legal • Tesorería • Publicaciones • Eventos",
-      color: "from-accent/20 to-accent/10",
-      iconColor: "text-accent",
-    },
-  ]
-
-  const teamValues = [
-    {
-      title: "Interdisciplinariedad",
-      description: "Diversidad de enfoques y profesiones",
-      icon: Handshake,
-    },
-    {
-      title: "Rigor Científico",
-      description: "Evidencia y metodología sólida",
-      icon: Target,
-    },
-    {
-      title: "Ética Profesional",
-      description: "Compromiso con la seguridad y el bienestar",
-      icon: Heart,
-    },
-    {
-      title: "Colaboración",
-      description: "Trabajo en red y construcción colectiva",
-      icon: Users,
-    },
-  ]
-
-  // Removed unused scroll helper to satisfy linting rules
-
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
@@ -78,11 +26,10 @@ export default function TeamPage() {
         <div className="relative container mx-auto px-4 py-24 md:py-32">
           <div className="max-w-3xl mx-auto text-center space-y-6">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-balance leading-tight">
-              Nuestro Equipo
+              {TEAM_PAGE.hero.title}
             </h1>
             <p className="text-lg md:text-xl text-white/90 text-pretty leading-relaxed max-w-2xl mx-auto">
-              Profesionales interdisciplinarios comprometidos con la excelencia en psicoterapias
-              asistidas por psicodélicos y enteógenos
+              {TEAM_PAGE.hero.description}
             </p>
           </div>
         </div>
@@ -93,19 +40,18 @@ export default function TeamPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-16 md:mb-20">
             <Badge className="mx-auto mb-4 px-4 py-1.5 bg-primary/10 text-primary border-primary/20">
-              ESTRUCTURA ORGANIZACIONAL
+              {TEAM_PAGE.structure.badge}
             </Badge>
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground">
-              Estructura Organizacional
+              {TEAM_PAGE.structure.title}
             </h2>
             <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-              SUPAP está organizada en comisiones especializadas que trabajan conjuntamente para
-              cumplir con nuestra misión.
+              {TEAM_PAGE.structure.description}
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {teamStructure.map((item, idx) => {
+            {TEAM_PAGE.structure.items.map((item, idx) => {
               const IconComponent = item.icon
               return (
                 <Card
@@ -140,14 +86,13 @@ export default function TeamPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-16 md:mb-20">
             <Badge className="mx-auto mb-4 px-4 py-1.5 bg-secondary/10 text-secondary border-secondary/20">
-              GALERÍA
+              {TEAM_PAGE.gallery.badge}
             </Badge>
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground">
-              Momentos de Nuestra Comunidad
+              {TEAM_PAGE.gallery.title}
             </h2>
             <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-              Actividades, eventos y encuentros que reflejan nuestro compromiso con la excelencia y
-              la colaboración
+              {TEAM_PAGE.gallery.description}
             </p>
           </div>
 
@@ -160,18 +105,18 @@ export default function TeamPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-16 md:mb-20">
             <Badge className="mx-auto mb-4 px-4 py-1.5 bg-primary/10 text-primary border-primary/20">
-              VALORES
+              {TEAM_PAGE.values.badge}
             </Badge>
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground">
-              Nuestros Valores
+              {TEAM_PAGE.values.title}
             </h2>
             <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-              Los principios que guían nuestro trabajo y compromiso con la comunidad
+              {TEAM_PAGE.values.description}
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {teamValues.map((value, idx) => {
+            {TEAM_PAGE.values.items.map((value, idx) => {
               const IconComponent = value.icon
               return (
                 <Card
@@ -201,11 +146,10 @@ export default function TeamPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground">
-              ¿Quieres formar parte de SUPAP?
+              {TEAM_PAGE.cta.title}
             </h2>
             <p className="text-base md:text-lg text-muted-foreground mb-8 leading-relaxed">
-              Buscamos profesionales comprometidos con la excelencia terapéutica y la innovación en
-              el campo de las psicoterapias asistidas.
+              {TEAM_PAGE.cta.description}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
@@ -213,7 +157,7 @@ export default function TeamPage() {
                 className="text-base md:text-lg px-8 font-semibold bg-primary hover:bg-primary/90"
               >
                 <Mail className="mr-2 h-5 w-5" />
-                Información de Membresía
+                {TEAM_PAGE.cta.buttons.membership}
               </Button>
               <Button
                 size="lg"
@@ -221,7 +165,7 @@ export default function TeamPage() {
                 className="text-base md:text-lg px-8 font-semibold bg-transparent hover:bg-secondary/10"
                 onClick={() => (window.location.href = "/")}
               >
-                Volver al Inicio
+                {TEAM_PAGE.cta.buttons.backToHome}
               </Button>
             </div>
           </div>

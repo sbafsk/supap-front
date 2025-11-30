@@ -5,115 +5,11 @@ import { Footer } from "@/components/navigation/footer"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import {
-  Users,
-  BookOpen,
-  Shield,
-  Briefcase,
-  Network,
-  FileText,
-  CheckCircle,
-  ArrowRight,
-} from "lucide-react"
+import { CheckCircle, ArrowRight } from "lucide-react"
+import { SERVICES_PAGE } from "@/data/services-content"
+import { COMMON_LABELS } from "@/data/common-labels"
 
 export default function ServicesPage() {
-  const mainServices = [
-    {
-      title: "Formación Profesional",
-      description:
-        "Programas educativos especializados para profesionales de la salud mental que desean profundizar en terapias asistidas por psicodélicos",
-      icon: BookOpen,
-      details: [
-        "Cursos teóricos y prácticos",
-        "Certificación profesional",
-        "Mentorías individualizadas",
-        "Acceso a recursos científicos",
-      ],
-    },
-    {
-      title: "Investigación Clínica",
-      description:
-        "Oportunidades para participar en estudios de investigación rigurosos sobre eficacia terapéutica de sustancias psicodélicas",
-      icon: FileText,
-      details: [
-        "Diseño de protocolos de investigación",
-        "Recopilación de datos",
-        "Análisis estadístico",
-        "Publicación de resultados",
-      ],
-    },
-    {
-      title: "Consultoría Especializada",
-      description:
-        "Asesoramiento experto para instituciones y profesionales que implementan protocolos terapéuticos seguros",
-      icon: Briefcase,
-      details: [
-        "Auditoría de protocolos",
-        "Capacitación del personal",
-        "Diseño de infraestructura",
-        "Cumplimiento normativo",
-      ],
-    },
-    {
-      title: "Eventos Académicos",
-      description:
-        "Conferencias, seminarios y conversatorios sobre avances en investigación psicodélica y salud mental",
-      icon: Users,
-      details: [
-        "Conferencias especializadas",
-        "Talleres prácticos",
-        "Mesas redondas",
-        "Networking profesional",
-      ],
-    },
-    {
-      title: "Red Internacional de Profesionales",
-      description:
-        "Conexión con expertos y organismos internacionales especializados en terapias psicodélicas",
-      icon: Network,
-      details: [
-        "Directorio de profesionales",
-        "Colaboraciones internacionales",
-        "Intercambio de conocimiento",
-        "Oportunidades de trabajo en red",
-      ],
-    },
-    {
-      title: "Recursos Educativos",
-      description:
-        "Acceso a biblioteca científica, publicaciones especializadas y materiales educativos actualizados",
-      icon: Shield,
-      details: [
-        "Artículos científicos",
-        "Libros especializados",
-        "Videos educativos",
-        "Webinarios grabados",
-      ],
-    },
-  ]
-
-  const serviceProcess = [
-    {
-      step: 1,
-      title: "Consulta Inicial",
-      description: "Evaluamos tus necesidades específicas y recomendamos el servicio más apropiado",
-    },
-    {
-      step: 2,
-      title: "Evaluación Personalizada",
-      description: "Realizamos un análisis detallado de tu situación y objetivos",
-    },
-    {
-      step: 3,
-      title: "Plan Personalizado",
-      description: "Diseñamos un programa adaptado a tus requerimientos únicos",
-    },
-    {
-      step: 4,
-      title: "Implementación",
-      description: "Trabajamos contigo para implementar y optimizar los resultados",
-    },
-  ]
 
   return (
     <div className="min-h-screen bg-background">
@@ -130,11 +26,10 @@ export default function ServicesPage() {
         <div className="relative container mx-auto px-4 py-24 md:py-32">
           <div className="max-w-3xl mx-auto text-center space-y-6">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-balance leading-tight">
-              Nuestros Servicios
+              {SERVICES_PAGE.hero.title}
             </h1>
             <p className="text-lg md:text-xl text-white/90 text-pretty leading-relaxed max-w-2xl mx-auto">
-              Soluciones integrales para profesionales e instituciones comprometidas con la
-              excelencia en psicoterapias
+              {SERVICES_PAGE.hero.description}
             </p>
           </div>
         </div>
@@ -145,19 +40,18 @@ export default function ServicesPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-16 md:mb-20">
             <Badge className="mx-auto mb-4 px-4 py-1.5 bg-primary/10 text-primary border-primary/20">
-              SERVICIOS PRINCIPALES
+              {SERVICES_PAGE.mainServices.badge}
             </Badge>
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground">
-              Lo Que Ofrecemos
+              {SERVICES_PAGE.mainServices.title}
             </h2>
             <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-              Una gama completa de servicios diseñados para apoyar tu crecimiento profesional y
-              práctica clínica
+              {SERVICES_PAGE.mainServices.description}
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {mainServices.map((service, idx) => {
+            {SERVICES_PAGE.mainServices.services.map((service, idx) => {
               const IconComponent = service.icon
               return (
                 <Card
@@ -195,14 +89,16 @@ export default function ServicesPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-16 md:mb-20">
             <Badge className="mx-auto mb-4 px-4 py-1.5 bg-secondary/10 text-secondary border-secondary/20">
-              CÓMO FUNCIONA
+              {SERVICES_PAGE.process.badge}
             </Badge>
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground">Nuestro Proceso</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground">
+              {SERVICES_PAGE.process.title}
+            </h2>
           </div>
 
           <div className="max-w-4xl mx-auto">
             <div className="grid md:grid-cols-4 gap-6">
-              {serviceProcess.map((item, idx) => (
+              {SERVICES_PAGE.process.steps.map((item, idx) => (
                 <div key={idx} className="flex flex-col">
                   <Card className="border-0 shadow-lg flex-1 relative">
                     <CardHeader className="text-center">
@@ -217,7 +113,7 @@ export default function ServicesPage() {
                       </p>
                     </CardContent>
                   </Card>
-                  {idx < serviceProcess.length - 1 && (
+                  {idx < SERVICES_PAGE.process.steps.length - 1 && (
                     <div className="hidden md:flex justify-center mt-6">
                       <ArrowRight className="h-6 w-6 text-primary/30 rotate-90" />
                     </div>
@@ -236,26 +132,18 @@ export default function ServicesPage() {
             <Card className="border-0 shadow-lg bg-gradient-to-br from-primary/5 to-secondary/5">
               <CardHeader>
                 <Badge className="w-fit mb-4 px-4 py-1.5 bg-primary/10 text-primary border-primary/20">
-                  TESTIMONIO
+                  {SERVICES_PAGE.testimonial.badge}
                 </Badge>
-                <CardTitle className="text-2xl md:text-3xl">¿Por Qué Elegirnos?</CardTitle>
+                <CardTitle className="text-2xl md:text-3xl">
+                  {SERVICES_PAGE.testimonial.title}
+                </CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
                 <p className="text-lg text-foreground leading-relaxed">
-                  En SUPAP, combinamos rigor científico con apoyo personalizado. Nuestro equipo
-                  multidisciplinario está dedicado a tu éxito, ofreciendo programas flexibles,
-                  mentoría experta y acceso a la red más amplia de profesionales en el campo de
-                  psicoterapias asistidas por psicodélicos.
+                  {SERVICES_PAGE.testimonial.description}
                 </p>
                 <ul className="grid md:grid-cols-2 gap-4">
-                  {[
-                    "Expertos con décadas de experiencia",
-                    "Programas personalizados",
-                    "Certificación internacionalmente reconocida",
-                    "Acceso a investigación de punta",
-                    "Comunidad de profesionales",
-                    "Apoyo continuo después del programa",
-                  ].map((benefit, idx) => (
+                  {SERVICES_PAGE.testimonial.benefits.map((benefit, idx) => (
                     <li key={idx} className="flex items-center gap-3 text-muted-foreground">
                       <CheckCircle className="h-5 w-5 text-secondary flex-shrink-0" />
                       {benefit}
@@ -273,17 +161,17 @@ export default function ServicesPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground">
-              ¿Listo para Comenzar?
+              {SERVICES_PAGE.cta.title}
             </h2>
             <p className="text-base md:text-lg text-muted-foreground mb-8 leading-relaxed">
-              Contáctanos hoy para descubrir cuál es el servicio más adecuado para ti.
+              {SERVICES_PAGE.cta.description}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 size="lg"
                 className="text-base md:text-lg px-8 font-semibold bg-primary hover:bg-primary/90"
               >
-                Solicitar Información
+                {COMMON_LABELS.buttons.requestInfo}
               </Button>
               <Button
                 size="lg"
@@ -291,7 +179,7 @@ export default function ServicesPage() {
                 className="text-base md:text-lg px-8 font-semibold bg-transparent hover:bg-secondary/10"
                 onClick={() => (window.location.href = "/")}
               >
-                Volver al Inicio
+                {COMMON_LABELS.buttons.backToHome}
               </Button>
             </div>
           </div>

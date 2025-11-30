@@ -5,6 +5,8 @@ import { Badge } from "@/components/ui/badge"
 import { Navbar } from "@/components/navigation/navbar"
 import { Footer } from "@/components/navigation/footer"
 import { Mail, MapPin, Calendar, Users, Heart, Brain, Leaf } from "lucide-react"
+import { HOME_PAGE } from "@/data/page-content"
+import { COMMON_LABELS } from "@/data/common-labels"
 
 export default function HomePage() {
   const scrollToId = (id: string) => {
@@ -27,11 +29,10 @@ export default function HomePage() {
         <div className="relative container mx-auto px-4 py-24 md:py-32">
           <div className="max-w-4xl mx-auto text-center space-y-6">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-balance leading-tight">
-              Sociedad Uruguaya de Psicoterapias Asistidas con Psicodélicos
+              {HOME_PAGE.hero.title}
             </h1>
             <p className="text-lg md:text-xl text-white/90 text-pretty leading-relaxed max-w-2xl mx-auto">
-              Promoviendo el uso responsable y terapéutico de sustancias psicodélicas en el contexto
-              de la salud mental y el bienestar integral
+              {HOME_PAGE.hero.description}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
               <Button
@@ -40,7 +41,7 @@ export default function HomePage() {
                 className="text-base md:text-lg px-8 font-semibold"
               >
                 <Users className="mr-2 h-5 w-5" />
-                Únete a SUPAP
+                {COMMON_LABELS.buttons.joinSupap}
               </Button>
               <Button
                 size="lg"
@@ -48,7 +49,7 @@ export default function HomePage() {
                 onClick={() => scrollToId("events")}
               >
                 <Calendar className="mr-2 h-5 w-5" />
-                Próximos Eventos
+                {COMMON_LABELS.buttons.upcomingEvents}
               </Button>
             </div>
           </div>
@@ -59,11 +60,11 @@ export default function HomePage() {
       <section id="about" className="py-20 md:py-28 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-16 md:mb-20">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground">Nuestra Misión</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground">
+              {HOME_PAGE.mission.title}
+            </h2>
             <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-              SUPAP es una organización dedicada a la investigación, educación y promoción del uso
-              terapéutico responsable de sustancias psicodélicas y enteógenas en el contexto de la
-              salud mental.
+              {HOME_PAGE.mission.description}
             </p>
           </div>
 
@@ -74,12 +75,11 @@ export default function HomePage() {
                 <div className="mx-auto w-16 h-16 bg-gradient-to-br from-primary/20 to-primary/10 rounded-full flex items-center justify-center mb-4">
                   <Brain className="h-8 w-8 text-primary" />
                 </div>
-                <CardTitle className="text-xl">Investigación</CardTitle>
+                <CardTitle className="text-xl">{HOME_PAGE.mission.cards[0].title}</CardTitle>
               </CardHeader>
               <CardContent>
                 <CardDescription className="text-base leading-relaxed">
-                  Promovemos la investigación científica rigurosa sobre los efectos terapéuticos de
-                  las sustancias psicodélicas.
+                  {HOME_PAGE.mission.cards[0].description}
                 </CardDescription>
               </CardContent>
             </Card>
@@ -90,12 +90,11 @@ export default function HomePage() {
                 <div className="mx-auto w-16 h-16 bg-gradient-to-br from-secondary/20 to-secondary/10 rounded-full flex items-center justify-center mb-4">
                   <Heart className="h-8 w-8 text-secondary" />
                 </div>
-                <CardTitle className="text-xl">Terapia</CardTitle>
+                <CardTitle className="text-xl">{HOME_PAGE.mission.cards[1].title}</CardTitle>
               </CardHeader>
               <CardContent>
                 <CardDescription className="text-base leading-relaxed">
-                  Desarrollamos protocolos terapéuticos seguros y efectivos para el tratamiento de
-                  diversos trastornos mentales.
+                  {HOME_PAGE.mission.cards[1].description}
                 </CardDescription>
               </CardContent>
             </Card>
@@ -106,12 +105,11 @@ export default function HomePage() {
                 <div className="mx-auto w-16 h-16 bg-gradient-to-br from-accent/20 to-accent/10 rounded-full flex items-center justify-center mb-4">
                   <Leaf className="h-8 w-8 text-accent" />
                 </div>
-                <CardTitle className="text-xl">Educación</CardTitle>
+                <CardTitle className="text-xl">{HOME_PAGE.mission.cards[2].title}</CardTitle>
               </CardHeader>
               <CardContent>
                 <CardDescription className="text-base leading-relaxed">
-                  Educamos a profesionales y al público sobre el uso responsable y los beneficios
-                  terapéuticos de estas sustancias.
+                  {HOME_PAGE.mission.cards[2].description}
                 </CardDescription>
               </CardContent>
             </Card>
@@ -124,53 +122,15 @@ export default function HomePage() {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-16 md:mb-20">
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground">
-              Nuestros Servicios
+              {HOME_PAGE.services.title}
             </h2>
             <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-              Ofrecemos una amplia gama de servicios para profesionales, investigadores y personas
-              interesadas en las terapias psicodélicas.
+              {HOME_PAGE.services.description}
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              {
-                title: "Formación Profesional",
-                description:
-                  "Cursos y talleres especializados para profesionales de la salud mental interesados en terapias asistidas por psicodélicos.",
-                color: "border-l-primary",
-              },
-              {
-                title: "Investigación Clínica",
-                description:
-                  "Participación en estudios clínicos y proyectos de investigación sobre la eficacia terapéutica de sustancias psicodélicas.",
-                color: "border-l-secondary",
-              },
-              {
-                title: "Consultoría",
-                description:
-                  "Asesoramiento especializado para instituciones y profesionales que deseen implementar protocolos terapéuticos seguros.",
-                color: "border-l-accent",
-              },
-              {
-                title: "Eventos Académicos",
-                description:
-                  "Conferencias, seminarios y conversatorios sobre avances en psicoterapias asistidas por psicodélicos.",
-                color: "border-l-primary",
-              },
-              {
-                title: "Red de Profesionales",
-                description:
-                  "Conexión con una red de profesionales especializados en terapias psicodélicas a nivel nacional e internacional.",
-                color: "border-l-secondary",
-              },
-              {
-                title: "Recursos Educativos",
-                description:
-                  "Acceso a biblioteca especializada, publicaciones científicas y materiales educativos actualizados.",
-                color: "border-l-accent",
-              },
-            ].map((service, idx) => (
+            {HOME_PAGE.services.items.map((service, idx) => (
               <Card
                 key={idx}
                 className={`hover:shadow-lg transition-all duration-300 border-l-4 ${service.color} bg-white`}
@@ -194,10 +154,10 @@ export default function HomePage() {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-16 md:mb-20">
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground">
-              Próximos Eventos
+              {HOME_PAGE.events.title}
             </h2>
             <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-              Mantente al día con nuestras actividades académicas y eventos especiales.
+              {HOME_PAGE.events.description}
             </p>
           </div>
 
@@ -206,29 +166,27 @@ export default function HomePage() {
               <CardHeader className="bg-gradient-to-r from-primary to-secondary text-white rounded-t-lg">
                 <div className="flex items-center gap-2 mb-2">
                   <Calendar className="h-5 w-5" />
-                  <span className="text-sm font-medium">Próximo Evento</span>
+                  <span className="text-sm font-medium">{HOME_PAGE.events.upcomingEvent.badge}</span>
                 </div>
-                <CardTitle className="text-xl">
-                  Conversatorio sobre Microdosis de Psilocibes
-                </CardTitle>
+                <CardTitle className="text-xl">{HOME_PAGE.events.upcomingEvent.title}</CardTitle>
               </CardHeader>
               <CardContent className="pt-6">
                 <div className="space-y-4">
                   <div className="flex items-start gap-3 text-muted-foreground">
                     <Calendar className="h-5 w-5 mt-0.5 flex-shrink-0 text-primary" />
-                    <span className="text-sm md:text-base">
-                      Sábado 16/08/25 de 10:00 a 13:00 (UY)
-                    </span>
+                    <span className="text-sm md:text-base">{HOME_PAGE.events.upcomingEvent.date}</span>
                   </div>
                   <div className="flex items-start gap-3 text-muted-foreground">
                     <MapPin className="h-5 w-5 mt-0.5 flex-shrink-0 text-primary" />
-                    <span className="text-sm md:text-base">Modalidad Virtual</span>
+                    <span className="text-sm md:text-base">
+                      {HOME_PAGE.events.upcomingEvent.location}
+                    </span>
                   </div>
                   <p className="text-sm text-muted-foreground font-medium mt-4">
-                    Con Lic. Cecilia Morelli & Lic. Sebastián Griscti
+                    {HOME_PAGE.events.upcomingEvent.speakers}
                   </p>
                   <Button className="w-full mt-6 bg-secondary hover:bg-secondary/90 text-base">
-                    Registrarse
+                    {COMMON_LABELS.buttons.register}
                   </Button>
                 </div>
               </CardContent>
@@ -237,16 +195,13 @@ export default function HomePage() {
             {/* Membership Info Card */}
             <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
               <CardHeader>
-                <CardTitle className="text-xl text-foreground">Información de Membresía</CardTitle>
+                <CardTitle className="text-xl text-foreground">
+                  {HOME_PAGE.events.membership.title}
+                </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="space-y-3">
-                  {[
-                    { label: "Socios SUPAP", value: "Gratuito", badge: "secondary" },
-                    { label: "No socios", value: "$800", badge: "outline" },
-                    { label: "Organizaciones FIPE", value: "USD 12", badge: "outline" },
-                    { label: "Estudiantes Universitarios", value: "$500", badge: "outline" },
-                  ].map((item, idx) => (
+                  {HOME_PAGE.events.membership.pricing.map((item, idx) => (
                     <div
                       key={idx}
                       className="flex justify-between items-center py-2 border-b border-border last:border-b-0"
@@ -265,14 +220,18 @@ export default function HomePage() {
                 <div className="pt-6 space-y-3">
                   <div className="p-3 bg-muted/50 rounded-lg">
                     <p className="text-sm text-muted-foreground">
-                      <strong className="text-foreground">Inscripción:</strong> link en bio
-                      @supap.uy
+                      <strong className="text-foreground">
+                        {HOME_PAGE.events.membership.registration.label}
+                      </strong>{" "}
+                      {HOME_PAGE.events.membership.registration.value}
                     </p>
                   </div>
                   <div className="p-3 bg-muted/50 rounded-lg">
                     <p className="text-sm text-muted-foreground">
-                      <strong className="text-foreground">Consultas:</strong>{" "}
-                      supap.eventos@gmail.com
+                      <strong className="text-foreground">
+                        {HOME_PAGE.events.membership.inquiries.label}
+                      </strong>{" "}
+                      {HOME_PAGE.events.membership.inquiries.value}
                     </p>
                   </div>
                 </div>
@@ -287,11 +246,10 @@ export default function HomePage() {
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground">
-              Únete a Nuestra Comunidad
+              {HOME_PAGE.cta.title}
             </h2>
             <p className="text-base md:text-lg text-muted-foreground mb-8 leading-relaxed">
-              Forma parte de la red de profesionales que está transformando el futuro de la salud
-              mental en Uruguay.
+              {HOME_PAGE.cta.description}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
@@ -299,7 +257,7 @@ export default function HomePage() {
                 className="text-base md:text-lg px-8 font-semibold bg-primary hover:bg-primary/90"
               >
                 <Mail className="mr-2 h-5 w-5" />
-                Contactar
+                {HOME_PAGE.cta.buttons.contact}
               </Button>
               <Button
                 size="lg"
@@ -307,7 +265,7 @@ export default function HomePage() {
                 className="text-base md:text-lg px-8 font-semibold bg-transparent hover:bg-secondary/10"
               >
                 <Users className="mr-2 h-5 w-5" />
-                Hacerse Socio
+                {HOME_PAGE.cta.buttons.becomeMember}
               </Button>
             </div>
           </div>
