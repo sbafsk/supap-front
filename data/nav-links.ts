@@ -10,4 +10,6 @@ export const navLinks: NavLinkItem[] = [
   { label: "Equipo", href: "/equipo", id: "team" },
   { label: "Servicios", href: "/servicios", id: "services" },
   { label: "Eventos", href: "/eventos", id: "events" },
+  { label: "Acción País", href: "/accionpais", id: "accionpais" },
+  { label: "Aula Virtual", href: "/aulavirtual", id: "aulavirtual" },
 ]

@@ -10,7 +10,6 @@ import { SERVICES_PAGE } from "@/data/services-content"
 import { COMMON_LABELS } from "@/data/common-labels"
 
 export default function ServicesPage() {
-
   return (
     <div className="min-h-screen bg-background">
       <Navbar />

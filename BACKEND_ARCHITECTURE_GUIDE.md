@@ -1,9 +1,11 @@
 # SUPAP Backend Architecture Guide
+
 ## Spring Boot + PostgreSQL + REST API
 
 ---
 
 ## Table of Contents
+
 1. [Overview](#overview)
 2. [Technology Stack](#technology-stack)
 3. [Database Schema](#database-schema)
@@ -30,23 +32,27 @@ The architecture is designed to scale from a content-driven website to a full-fe
 ## Technology Stack
 
 ### Core Framework
+
 - **Spring Boot 3.x** (latest stable)
 - **Java 17+** (LTS version)
 - **Maven** or **Gradle** (build tool)
 
 ### Database
+
 - **PostgreSQL 15+** (primary database)
 - **Spring Data JPA** (ORM)
 - **Hibernate** (JPA implementation)
 - **Flyway** or **Liquibase** (database migrations)
 
 ### Security
+
 - **Spring Security 6.x**
 - **JWT (JSON Web Tokens)** for stateless authentication
 - **BCrypt** for password hashing
 - **OAuth2** (optional, for social login)
 
 ### Additional Libraries
+
 - **Lombok** (reduce boilerplate)
 - **MapStruct** (DTO mapping)
 - **Bean Validation** (JSR-380)
@@ -54,6 +60,7 @@ The architecture is designed to scale from a content-driven website to a full-fe
 - **Spring Boot Actuator** (monitoring)
 
 ### External Services (Future)
+
 - **Stripe/MercadoPago** (payments)
 - **AWS S3/Cloudinary** (file storage)
 - **SendGrid/AWS SES** (email service)
@@ -125,6 +132,7 @@ Course ──< Assignment
 ### 1. User Management
 
 #### User Entity
+
 ```java
 @Entity
 @Table(name = "users")
@@ -173,6 +181,7 @@ enum UserType {
 ```
 
 #### Role Entity
+
 ```java
 @Entity
 @Table(name = "roles")
@@ -201,6 +210,7 @@ enum RoleName {
 ### 2. Events Module
 
 #### Event Entity
+
 ```java
 @Entity
 @Table(name = "events")
@@ -280,6 +290,7 @@ enum EventStatus {
 ```
 
 #### EventSpeaker Entity
+
 ```java
 @Entity
 @Table(name = "event_speakers")
@@ -303,6 +314,7 @@ public class EventSpeaker {
 ```
 
 #### EventRegistration Entity
+
 ```java
 @Entity
 @Table(name = "event_registrations")
@@ -356,6 +368,7 @@ enum RegistrationStatus {
 ### 3. Services Module
 
 #### Service Entity
+
 ```java
 @Entity
 @Table(name = "services")
@@ -394,6 +407,7 @@ public class Service {
 ### 4. Team Module
 
 #### TeamMember Entity
+
 ```java
 @Entity
 @Table(name = "team_members")
@@ -434,6 +448,7 @@ enum MemberRole {
 ```
 
 #### TeamCommission Entity
+
 ```java
 @Entity
 @Table(name = "team_commissions")
@@ -465,6 +480,7 @@ public class TeamCommission {
 ### 5. Organization Info
 
 #### Milestone Entity
+
 ```java
 @Entity
 @Table(name = "milestones")
@@ -487,6 +503,7 @@ public class Milestone {
 ```
 
 #### Partnership Entity
+
 ```java
 @Entity
 @Table(name = "partnerships")
@@ -519,6 +536,7 @@ enum PartnershipCategory {
 ### 6. Contact & Newsletter
 
 #### NewsletterSubscription Entity
+
 ```java
 @Entity
 @Table(name = "newsletter_subscriptions")
@@ -553,6 +571,7 @@ enum SubscriptionStatus {
 ```
 
 #### ContactMessage Entity
+
 ```java
 @Entity
 @Table(name = "contact_messages")
@@ -595,6 +614,7 @@ enum MessageStatus {
 ## 7. Aula Virtual (LMS Module - Future)
 
 ### Course Entity
+
 ```java
 @Entity
 @Table(name = "courses")
@@ -673,6 +693,7 @@ enum CourseStatus {
 ```
 
 ### CourseModule Entity
+
 ```java
 @Entity
 @Table(name = "course_modules")
@@ -703,6 +724,7 @@ public class CourseModule {
 ```
 
 ### Lesson Entity
+
 ```java
 @Entity
 @Table(name = "lessons")
@@ -747,6 +769,7 @@ enum LessonType {
 ```
 
 ### Enrollment Entity
+
 ```java
 @Entity
 @Table(name = "enrollments")
@@ -790,6 +813,7 @@ enum EnrollmentStatus {
 ```
 
 ### StudentProgress Entity
+
 ```java
 @Entity
 @Table(name = "student_progress")
@@ -820,6 +844,7 @@ public class StudentProgress {
 ```
 
 ### Assignment Entity
+
 ```java
 @Entity
 @Table(name = "assignments")
@@ -847,6 +872,7 @@ public class Assignment {
 ```
 
 ### Submission Entity
+
 ```java
 @Entity
 @Table(name = "submissions")
@@ -895,6 +921,7 @@ enum SubmissionStatus {
 ```
 
 ### Assessment Entity (Quiz)
+
 ```java
 @Entity
 @Table(name = "assessments")
@@ -923,6 +950,7 @@ public class Assessment {
 ```
 
 ### AssessmentAttempt Entity
+
 ```java
 @Entity
 @Table(name = "assessment_attempts")
@@ -954,6 +982,7 @@ public class AssessmentAttempt {
 ```
 
 ### Certificate Entity
+
 ```java
 @Entity
 @Table(name = "certificates")
@@ -988,6 +1017,7 @@ enum CertificateStatus {
 ```
 
 ### Payment Entity
+
 ```java
 @Entity
 @Table(name = "payments")
@@ -1056,6 +1086,7 @@ enum PaymentStatus {
 ## API Endpoints
 
 ### Base URL
+
 ```
 https://api.supap.uy/api/v1
 ```
@@ -1063,7 +1094,9 @@ https://api.supap.uy/api/v1
 ### Authentication Endpoints
 
 #### POST /auth/register
+
 Register a new user
+
 ```json
 Request:
 {
@@ -1086,7 +1119,9 @@ Response: 201 Created
 ```
 
 #### POST /auth/login
+
 Authenticate user
+
 ```json
 Request:
 {
@@ -1105,7 +1140,9 @@ Response: 200 OK
 ```
 
 #### POST /auth/refresh
+
 Refresh JWT token
+
 ```json
 Request:
 {
@@ -1120,7 +1157,9 @@ Response: 200 OK
 ```
 
 #### POST /auth/forgot-password
+
 Request password reset
+
 ```json
 Request:
 {
@@ -1138,7 +1177,9 @@ Response: 200 OK
 ### Event Endpoints
 
 #### GET /events
+
 List all events (public)
+
 ```
 Query Parameters:
 - page: int (default: 0)
@@ -1184,7 +1225,9 @@ Response: 200 OK
 ```
 
 #### GET /events/{id}
+
 Get single event
+
 ```
 Response: 200 OK
 {
@@ -1196,7 +1239,9 @@ Response: 200 OK
 ```
 
 #### POST /events (Admin only)
+
 Create new event
+
 ```json
 Request: (Requires ROLE_ADMIN)
 {
@@ -1224,9 +1269,11 @@ Response: 201 Created
 ```
 
 #### PUT /events/{id} (Admin only)
+
 Update event
 
 #### DELETE /events/{id} (Admin only)
+
 Delete event
 
 ---
@@ -1234,7 +1281,9 @@ Delete event
 ### Event Registration Endpoints
 
 #### POST /events/{id}/register
+
 Register for an event
+
 ```json
 Request:
 {
@@ -1257,7 +1306,9 @@ Response: 201 Created
 ```
 
 #### GET /registrations/my
+
 Get current user's registrations
+
 ```
 Response: 200 OK
 [
@@ -1272,6 +1323,7 @@ Response: 200 OK
 ```
 
 #### GET /events/{id}/registrations (Admin only)
+
 Get all registrations for an event
 
 ---
@@ -1279,7 +1331,9 @@ Get all registrations for an event
 ### Services Endpoints
 
 #### GET /services
+
 List all active services
+
 ```
 Response: 200 OK
 [
@@ -1298,15 +1352,19 @@ Response: 200 OK
 ```
 
 #### GET /services/{id}
+
 Get single service
 
 #### POST /services (Admin only)
+
 Create service
 
 #### PUT /services/{id} (Admin only)
+
 Update service
 
 #### DELETE /services/{id} (Admin only)
+
 Delete service
 
 ---
@@ -1314,7 +1372,9 @@ Delete service
 ### Team Endpoints
 
 #### GET /team/commissions
+
 List all commissions
+
 ```
 Response: 200 OK
 [
@@ -1339,9 +1399,11 @@ Response: 200 OK
 ```
 
 #### GET /team/members
+
 List all team members
 
 #### GET /team/members/{id}
+
 Get single member
 
 ---
@@ -1349,12 +1411,15 @@ Get single member
 ### Organization Info Endpoints
 
 #### GET /organization/milestones
+
 List milestones
 
 #### GET /organization/partnerships
+
 List partnerships
 
 #### GET /organization/values
+
 Get organization values
 
 ---
@@ -1362,7 +1427,9 @@ Get organization values
 ### Newsletter Endpoints
 
 #### POST /newsletter/subscribe
+
 Subscribe to newsletter
+
 ```json
 Request:
 {
@@ -1379,9 +1446,11 @@ Response: 201 Created
 ```
 
 #### GET /newsletter/confirm/{token}
+
 Confirm subscription via email token
 
 #### POST /newsletter/unsubscribe
+
 Unsubscribe from newsletter
 
 ---
@@ -1389,7 +1458,9 @@ Unsubscribe from newsletter
 ### Contact Endpoints
 
 #### POST /contact
+
 Submit contact message
+
 ```json
 Request:
 {
@@ -1409,6 +1480,7 @@ Response: 201 Created
 ```
 
 #### GET /contact/messages (Admin only)
+
 List all contact messages
 
 ---
@@ -1416,7 +1488,9 @@ List all contact messages
 ### Course Endpoints (Aula Virtual)
 
 #### GET /courses
+
 List all published courses
+
 ```
 Query Parameters:
 - page, size
@@ -1450,15 +1524,19 @@ Response: 200 OK
 ```
 
 #### GET /courses/{slug}
+
 Get course details
 
 #### GET /courses/{id}/modules
+
 Get course curriculum
 
 #### POST /courses (Admin/Instructor only)
+
 Create new course
 
 #### PUT /courses/{id} (Admin/Instructor only)
+
 Update course
 
 ---
@@ -1466,7 +1544,9 @@ Update course
 ### Enrollment Endpoints
 
 #### POST /courses/{id}/enroll
+
 Enroll in a course
+
 ```json
 Request: (Authenticated)
 {
@@ -1488,12 +1568,15 @@ Response: 201 Created
 ```
 
 #### GET /enrollments/my
+
 Get current user's enrollments
 
 #### GET /courses/{id}/progress
+
 Get course progress for current user
 
 #### POST /lessons/{id}/complete
+
 Mark lesson as completed
 
 ---
@@ -1501,10 +1584,13 @@ Mark lesson as completed
 ### Assignment Endpoints
 
 #### GET /assignments/{id}
+
 Get assignment details
 
 #### POST /assignments/{id}/submit
+
 Submit assignment
+
 ```json
 Request:
 {
@@ -1516,9 +1602,11 @@ Response: 201 Created
 ```
 
 #### GET /submissions/my
+
 Get user's submissions
 
 #### POST /submissions/{id}/grade (Instructor only)
+
 Grade a submission
 
 ---
@@ -1526,12 +1614,15 @@ Grade a submission
 ### Assessment Endpoints
 
 #### GET /assessments/{id}
+
 Get quiz/assessment
 
 #### POST /assessments/{id}/attempt
+
 Start assessment attempt
 
 #### POST /assessments/{id}/submit
+
 Submit assessment answers
 
 ---
@@ -1539,9 +1630,11 @@ Submit assessment answers
 ### Certificate Endpoints
 
 #### GET /certificates/my
+
 Get user's certificates
 
 #### GET /certificates/{certificateNumber}
+
 Verify certificate (public)
 
 ---
@@ -1549,7 +1642,9 @@ Verify certificate (public)
 ### Payment Endpoints
 
 #### POST /payments
+
 Create payment
+
 ```json
 Request:
 {
@@ -1570,9 +1665,11 @@ Response: 201 Created
 ```
 
 #### GET /payments/my
+
 Get user's payment history
 
 #### POST /payments/{id}/confirm
+
 Confirm payment (webhook from payment provider)
 
 ---
@@ -1587,6 +1684,7 @@ Confirm payment (webhook from payment provider)
    - Access token expires in 1 hour, refresh token in 7 days
 
 2. **Token Structure**
+
 ```json
 {
   "sub": "user@example.com",
@@ -1598,6 +1696,7 @@ Confirm payment (webhook from payment provider)
 ```
 
 3. **Authorization Header**
+
 ```
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
 ```
@@ -1605,6 +1704,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
 ### Security Configuration
 
 #### application.yml
+
 ```yaml
 jwt:
   secret: ${JWT_SECRET:your-secret-key-change-this}
@@ -1630,6 +1730,7 @@ spring:
 ```
 
 #### SecurityConfig.java
+
 ```java
 @Configuration
 @EnableWebSecurity
@@ -1687,17 +1788,18 @@ public class SecurityConfig {
 
 ### Role-Based Access Control (RBAC)
 
-| Role | Permissions |
-|------|------------|
-| **ROLE_USER** | View public content, register for events |
-| **ROLE_MEMBER** | All USER + free event access, member pricing |
-| **ROLE_STUDENT** | All MEMBER + course access, submit assignments |
+| Role                | Permissions                                         |
+| ------------------- | --------------------------------------------------- |
+| **ROLE_USER**       | View public content, register for events            |
+| **ROLE_MEMBER**     | All USER + free event access, member pricing        |
+| **ROLE_STUDENT**    | All MEMBER + course access, submit assignments      |
 | **ROLE_INSTRUCTOR** | All STUDENT + manage own courses, grade assignments |
-| **ROLE_ADMIN** | All permissions, manage all content |
+| **ROLE_ADMIN**      | All permissions, manage all content                 |
 
 ### Input Validation
 
 Use Bean Validation annotations:
+
 ```java
 public class EventRegistrationRequest {
     @NotBlank(message = "First name is required")
@@ -1746,6 +1848,7 @@ public class EventRegistrationRequest {
 ## Database Configuration
 
 ### application.yml (Development)
+
 ```yaml
 spring:
   datasource:
@@ -1781,6 +1884,7 @@ logging:
 ```
 
 ### application-prod.yml (Production)
+
 ```yaml
 spring:
   datasource:
@@ -1814,7 +1918,8 @@ logging:
 
 ### Database Migration (Flyway)
 
-#### V1__initial_schema.sql
+#### V1\_\_initial_schema.sql
+
 ```sql
 -- Users and Roles
 CREATE TABLE roles (
@@ -1878,6 +1983,7 @@ CREATE INDEX idx_events_status ON events(status);
 ### Connection Pooling (HikariCP)
 
 HikariCP is the default in Spring Boot. Configuration:
+
 ```yaml
 spring:
   datasource:
@@ -1893,6 +1999,7 @@ spring:
 ### Database Indexes
 
 Key indexes for performance:
+
 ```sql
 -- Events
 CREATE INDEX idx_events_date_status ON events(event_date, status);
@@ -2027,6 +2134,7 @@ supap-backend/
 ## Implementation Roadmap
 
 ### Phase 1: Core Backend Setup (Week 1-2)
+
 - [ ] Initialize Spring Boot project
 - [ ] Configure PostgreSQL connection
 - [ ] Set up Flyway migrations
@@ -2036,6 +2144,7 @@ supap-backend/
 - [ ] Set up Spring Security
 
 ### Phase 2: Events Module (Week 3)
+
 - [ ] Event entity & repository
 - [ ] EventSpeaker entity
 - [ ] Event CRUD endpoints
@@ -2043,6 +2152,7 @@ supap-backend/
 - [ ] Email notifications for registrations
 
 ### Phase 3: Content Management (Week 4)
+
 - [ ] Services CRUD
 - [ ] Team & Commissions CRUD
 - [ ] Organization info (milestones, partnerships)
@@ -2050,6 +2160,7 @@ supap-backend/
 - [ ] Contact form
 
 ### Phase 4: Aula Virtual - Courses (Week 5-6)
+
 - [ ] Course entity & module structure
 - [ ] Lesson entity with different types
 - [ ] Course CRUD endpoints
@@ -2057,12 +2168,14 @@ supap-backend/
 - [ ] Student progress tracking
 
 ### Phase 5: Assessments & Assignments (Week 7)
+
 - [ ] Assignment entity & submission
 - [ ] Assessment/Quiz entity
 - [ ] Grading system
 - [ ] Assignment file upload (AWS S3)
 
 ### Phase 6: Payments Integration (Week 8)
+
 - [ ] Payment entity
 - [ ] MercadoPago integration
 - [ ] Payment webhooks
@@ -2070,12 +2183,14 @@ supap-backend/
 - [ ] Refund handling
 
 ### Phase 7: Certificates (Week 9)
+
 - [ ] Certificate generation
 - [ ] PDF certificate creation
 - [ ] Certificate verification endpoint
 - [ ] Email delivery
 
 ### Phase 8: Testing & Documentation (Week 10)
+
 - [ ] Unit tests (80%+ coverage)
 - [ ] Integration tests
 - [ ] API documentation (Swagger)
@@ -2083,6 +2198,7 @@ supap-backend/
 - [ ] Performance testing
 
 ### Phase 9: Production Deployment (Week 11)
+
 - [ ] Set up production database
 - [ ] Configure CI/CD pipeline
 - [ ] Deploy to production server
@@ -2094,7 +2210,9 @@ supap-backend/
 ## Additional Considerations
 
 ### Email Service Integration
+
 Use **SendGrid** or **AWS SES** for:
+
 - Registration confirmations
 - Event registration confirmations
 - Password resets
@@ -2103,7 +2221,9 @@ Use **SendGrid** or **AWS SES** for:
 - Newsletter campaigns
 
 ### File Storage
+
 Use **AWS S3** or **Cloudinary** for:
+
 - Event images
 - Speaker photos
 - Team member photos
@@ -2113,19 +2233,23 @@ Use **AWS S3** or **Cloudinary** for:
 - Resource files (videos, documents)
 
 ### Caching Strategy
+
 Implement **Redis** for:
+
 - Course catalog caching
 - Event listings
 - User session management
 - Rate limiting
 
 ### Monitoring & Logging
+
 - **Spring Boot Actuator** for health checks
 - **Prometheus + Grafana** for metrics
 - **ELK Stack** (Elasticsearch, Logstash, Kibana) for logs
 - **Sentry** for error tracking
 
 ### Performance Optimization
+
 - Implement pagination for all list endpoints
 - Use DTO projections to reduce data transfer
 - Lazy loading for relationships
@@ -2133,6 +2257,7 @@ Implement **Redis** for:
 - CDN for static assets
 
 ### Backup Strategy
+
 - Daily automated PostgreSQL backups
 - Point-in-time recovery enabled
 - File storage backups (S3 versioning)
@@ -2143,6 +2268,7 @@ Implement **Redis** for:
 ## Getting Started
 
 ### Prerequisites
+
 ```bash
 - Java 17+
 - Maven 3.8+
@@ -2153,12 +2279,14 @@ Implement **Redis** for:
 ### Local Development Setup
 
 1. **Clone the repository**
+
 ```bash
 git clone https://github.com/supap/backend.git
 cd backend
 ```
 
 2. **Set up PostgreSQL**
+
 ```bash
 # Using Docker
 docker run --name supap-postgres \
@@ -2169,6 +2297,7 @@ docker run --name supap-postgres \
 ```
 
 3. **Configure environment variables**
+
 ```bash
 export DB_USERNAME=supap_user
 export DB_PASSWORD=secure_password
@@ -2176,11 +2305,13 @@ export JWT_SECRET=your-super-secret-key-change-this-in-production
 ```
 
 4. **Run the application**
+
 ```bash
 mvn spring-boot:run
 ```
 
 5. **Access Swagger UI**
+
 ```
 http://localhost:8080/swagger-ui.html
 ```
@@ -2192,6 +2323,7 @@ http://localhost:8080/swagger-ui.html
 This guide provides a comprehensive blueprint for the SUPAP backend architecture. The design is scalable, secure, and ready to support both the current organizational website and the future Aula Virtual LMS platform.
 
 **Key Strengths:**
+
 - Modular, extensible architecture
 - Comprehensive security with JWT + Spring Security
 - RESTful API design with clear separation of concerns
@@ -2199,6 +2331,7 @@ This guide provides a comprehensive blueprint for the SUPAP backend architecture
 - Clear roadmap for implementation
 
 **Next Steps:**
+
 1. Review and approve this architecture
 2. Set up the development environment
 3. Begin Phase 1 implementation

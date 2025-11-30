@@ -10,7 +10,6 @@ import { ABOUT_PAGE } from "@/data/about-content"
 import { COMMON_LABELS } from "@/data/common-labels"
 
 export default function AboutPage() {
-
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
@@ -48,9 +47,7 @@ export default function AboutPage() {
                 <CardTitle className="text-2xl text-primary">{ABOUT_PAGE.mission.title}</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <p className="text-foreground leading-relaxed">
-                  {ABOUT_PAGE.mission.primaryText}
-                </p>
+                <p className="text-foreground leading-relaxed">{ABOUT_PAGE.mission.primaryText}</p>
                 <p className="text-muted-foreground leading-relaxed">
                   {ABOUT_PAGE.mission.secondaryText}
                 </p>
@@ -66,9 +63,7 @@ export default function AboutPage() {
                 <CardTitle className="text-2xl text-secondary">{ABOUT_PAGE.vision.title}</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <p className="text-foreground leading-relaxed">
-                  {ABOUT_PAGE.vision.primaryText}
-                </p>
+                <p className="text-foreground leading-relaxed">{ABOUT_PAGE.vision.primaryText}</p>
                 <p className="text-muted-foreground leading-relaxed">
                   {ABOUT_PAGE.vision.secondaryText}
                 </p>
