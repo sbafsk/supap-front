@@ -5,7 +5,7 @@ import { Footer } from "@/components/navigation/footer"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { CheckCircle, ArrowRight } from "lucide-react"
+import { CheckCircle } from "lucide-react"
 import { SERVICES_PAGE } from "@/data/services-content"
 import { COMMON_LABELS } from "@/data/common-labels"
 
@@ -22,7 +22,7 @@ export default function ServicesPage() {
           <div className="absolute top-1/2 right-1/4 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
         </div>
 
-        <div className="relative container mx-auto px-4 py-24 md:py-32">
+        <div className="relative container mx-auto px-6 lg:px-8 py-24 md:py-32">
           <div className="max-w-3xl mx-auto text-center space-y-6">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-balance leading-tight">
               {SERVICES_PAGE.hero.title}
@@ -36,7 +36,7 @@ export default function ServicesPage() {
 
       {/* Main Services Section */}
       <section className="py-20 md:py-28 bg-background">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16 md:mb-20">
             <Badge className="mx-auto mb-4 px-4 py-1.5 bg-primary/10 text-primary border-primary/20">
               {SERVICES_PAGE.mainServices.badge}
@@ -85,7 +85,7 @@ export default function ServicesPage() {
 
       {/* Process Section */}
       <section className="py-20 md:py-28 bg-muted/30">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16 md:mb-20">
             <Badge className="mx-auto mb-4 px-4 py-1.5 bg-secondary/10 text-secondary border-secondary/20">
               {SERVICES_PAGE.process.badge}
@@ -98,26 +98,19 @@ export default function ServicesPage() {
           <div className="max-w-4xl mx-auto">
             <div className="grid md:grid-cols-4 gap-6">
               {SERVICES_PAGE.process.steps.map((item, idx) => (
-                <div key={idx} className="flex flex-col">
-                  <Card className="border-0 shadow-lg flex-1 relative">
-                    <CardHeader className="text-center">
-                      <div className="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4">
-                        {item.step}
-                      </div>
-                      <CardTitle className="text-base">{item.title}</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-muted-foreground text-sm text-center leading-relaxed">
-                        {item.description}
-                      </p>
-                    </CardContent>
-                  </Card>
-                  {idx < SERVICES_PAGE.process.steps.length - 1 && (
-                    <div className="hidden md:flex justify-center mt-6">
-                      <ArrowRight className="h-6 w-6 text-primary/30 rotate-90" />
+                <Card key={idx} className="border-0 shadow-lg">
+                  <CardHeader className="text-center">
+                    <div className="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4">
+                      {item.step}
                     </div>
-                  )}
-                </div>
+                    <CardTitle className="text-base">{item.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground text-sm text-center leading-relaxed">
+                      {item.description}
+                    </p>
+                  </CardContent>
+                </Card>
               ))}
             </div>
           </div>
@@ -126,7 +119,7 @@ export default function ServicesPage() {
 
       {/* Testimonial Section */}
       <section className="py-20 md:py-28 bg-background">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">
             <Card className="border-0 shadow-lg bg-gradient-to-br from-primary/5 to-secondary/5">
               <CardHeader>
@@ -157,7 +150,7 @@ export default function ServicesPage() {
 
       {/* CTA Section */}
       <section className="py-20 md:py-28 bg-gradient-to-br from-primary/5 to-secondary/5">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-6 lg:px-8">
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground">
               {SERVICES_PAGE.cta.title}

@@ -4,9 +4,10 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge"
 import { Navbar } from "@/components/navigation/navbar"
 import { Footer } from "@/components/navigation/footer"
-import { Mail, MapPin, Calendar, Users, Heart, Brain, Leaf } from "lucide-react"
+import { Mail, MapPin, Calendar, Users, Heart, Brain, Leaf, ArrowRight } from "lucide-react"
 import { HOME_PAGE } from "@/data/page-content"
 import { COMMON_LABELS } from "@/data/common-labels"
+import Link from "next/link"
 
 export default function HomePage() {
   const scrollToId = (id: string) => {
@@ -26,7 +27,7 @@ export default function HomePage() {
           <div className="absolute top-1/2 right-1/4 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
         </div>
 
-        <div className="relative container mx-auto px-4 py-24 md:py-32">
+        <div className="relative container mx-auto px-6 lg:px-8 py-24 md:py-32">
           <div className="max-w-4xl mx-auto text-center space-y-6">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-balance leading-tight">
               {HOME_PAGE.hero.title}
@@ -58,7 +59,7 @@ export default function HomePage() {
 
       {/* Mission Section */}
       <section id="about" className="py-20 md:py-28 bg-background">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16 md:mb-20">
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground">
               {HOME_PAGE.mission.title}
@@ -114,12 +115,25 @@ export default function HomePage() {
               </CardContent>
             </Card>
           </div>
+
+          <div className="flex justify-center mt-12">
+            <Link href="/nosotros">
+              <Button
+                size="lg"
+                variant="outline"
+                className="text-base md:text-lg px-8 font-semibold hover:bg-primary/10"
+              >
+                {COMMON_LABELS.buttons.viewMore}
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
+          </div>
         </div>
       </section>
 
       {/* Services Section */}
       <section id="services" className="py-20 md:py-28 bg-muted/30">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16 md:mb-20">
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground">
               {HOME_PAGE.services.title}
@@ -146,12 +160,25 @@ export default function HomePage() {
               </Card>
             ))}
           </div>
+
+          <div className="flex justify-center mt-12">
+            <Link href="/servicios">
+              <Button
+                size="lg"
+                variant="outline"
+                className="text-base md:text-lg px-8 font-semibold hover:bg-primary/10"
+              >
+                {COMMON_LABELS.buttons.viewAllServices}
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
+          </div>
         </div>
       </section>
 
       {/* Events Section */}
       <section id="events" className="py-20 md:py-28 bg-background">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16 md:mb-20">
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground">
               {HOME_PAGE.events.title}
@@ -242,12 +269,25 @@ export default function HomePage() {
               </CardContent>
             </Card>
           </div>
+
+          <div className="flex justify-center mt-12">
+            <Link href="/eventos">
+              <Button
+                size="lg"
+                variant="outline"
+                className="text-base md:text-lg px-8 font-semibold hover:bg-primary/10"
+              >
+                {COMMON_LABELS.buttons.viewAllEvents}
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
+          </div>
         </div>
       </section>
 
       {/* CTA Section */}
       <section className="py-20 md:py-28 bg-gradient-to-br from-primary/5 to-secondary/5">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-6 lg:px-8">
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground">
               {HOME_PAGE.cta.title}
