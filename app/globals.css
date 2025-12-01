@@ -10,33 +10,48 @@
   --card-foreground: oklch(0.2 0.02 240); /* Dark navy card text */
   --popover: oklch(1 0 0); /* White popover */
   --popover-foreground: oklch(0.2 0.02 240); /* Dark navy popover text */
-  --primary: oklch(0.55 0.15 280); /* SUPAP purple */
+  --primary: oklch(0.49 0.15 310); /* SUPAP Brand Purple #864C9C */
   --primary-foreground: oklch(1 0 0); /* White text on purple */
-  --secondary: oklch(0.65 0.18 200); /* SUPAP teal */
-  --secondary-foreground: oklch(1 0 0); /* White text on teal */
+  --secondary: oklch(0.46 0.12 275); /* SUPAP Brand Blue #4D5AA6 */
+  --secondary-foreground: oklch(1 0 0); /* White text on blue */
   --muted: oklch(0.96 0.005 240); /* Light muted background */
   --muted-foreground: oklch(0.45 0.02 240); /* Muted text */
-  --accent: oklch(0.65 0.18 200); /* Teal accent */
-  --accent-foreground: oklch(1 0 0); /* White text on accent */
+  --accent: oklch(0.79 0.08 190); /* SUPAP Gradient Turquoise #5FD4C4 */
+  --accent-foreground: oklch(0.2 0.02 240); /* Dark text on turquoise */
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(1 0 0);
   --border: oklch(0.9 0.005 240); /* Light border */
   --input: oklch(1 0 0); /* White input background */
-  --ring: oklch(0.65 0.18 200 / 0.5); /* Teal focus ring */
-  --chart-1: oklch(0.55 0.15 280); /* Purple chart color */
-  --chart-2: oklch(0.65 0.18 200); /* Teal chart color */
+  --ring: oklch(0.46 0.12 275 / 0.5); /* Brand blue focus ring */
+  --chart-1: oklch(0.49 0.15 310); /* Brand purple chart color */
+  --chart-2: oklch(0.46 0.12 275); /* Brand blue chart color */
   --chart-3: oklch(0.2 0.02 240); /* Navy chart color */
   --chart-4: oklch(0.96 0.005 240); /* Light gray chart color */
   --chart-5: oklch(1 0 0); /* White chart color */
   --radius: 0.625rem;
   --sidebar: oklch(0.98 0.005 240);
   --sidebar-foreground: oklch(0.2 0.02 240);
-  --sidebar-primary: oklch(0.55 0.15 280);
+  --sidebar-primary: oklch(0.49 0.15 310); /* Brand purple */
   --sidebar-primary-foreground: oklch(1 0 0);
-  --sidebar-accent: oklch(0.65 0.18 200);
+  --sidebar-accent: oklch(0.46 0.12 275); /* Brand blue */
   --sidebar-accent-foreground: oklch(1 0 0);
   --sidebar-border: oklch(0.9 0.005 240);
-  --sidebar-ring: oklch(0.65 0.18 200 / 0.5);
+  --sidebar-ring: oklch(0.46 0.12 275 / 0.5); /* Brand blue focus */
+
+  /* SUPAP Brand Colors - Official Identity */
+  --brand-purple: #864C9C; /* CMYK: C:58 M:89 Y:0 K:0 */
+  --brand-purple-oklch: oklch(0.49 0.15 310);
+  --brand-blue: #4D5AA6; /* CMYK: C:74 M:69 Y:5 K:0 */
+  --brand-blue-oklch: oklch(0.46 0.12 275);
+
+  /* Gradient Colors */
+  --gradient-yellow: #F9C732;
+  --gradient-yellow-oklch: oklch(0.81 0.14 85);
+  --gradient-purple: var(--brand-purple);
+  --gradient-turquoise: #5FD4C4;
+  --gradient-turquoise-oklch: oklch(0.79 0.08 190);
+  --gradient-soft-yellow: #F5E676;
+  --gradient-soft-yellow-oklch: oklch(0.88 0.12 95);
 }
 
 .dark {
@@ -46,32 +61,32 @@
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.145 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.65 0.15 280); /* Lighter purple for dark mode */
+  --primary: oklch(0.58 0.16 310); /* Lighter brand purple for dark mode */
   --primary-foreground: oklch(0.145 0 0);
-  --secondary: oklch(0.75 0.18 200); /* Lighter teal for dark mode */
+  --secondary: oklch(0.56 0.13 275); /* Lighter brand blue for dark mode */
   --secondary-foreground: oklch(0.145 0 0);
   --muted: oklch(0.269 0 0);
   --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.75 0.18 200);
+  --accent: oklch(0.82 0.09 190); /* Lighter turquoise for dark mode */
   --accent-foreground: oklch(0.145 0 0);
   --destructive: oklch(0.396 0.141 25.723);
   --destructive-foreground: oklch(0.637 0.237 25.331);
   --border: oklch(0.269 0 0);
   --input: oklch(0.269 0 0);
-  --ring: oklch(0.75 0.18 200 / 0.5);
-  --chart-1: oklch(0.65 0.15 280);
-  --chart-2: oklch(0.75 0.18 200);
+  --ring: oklch(0.56 0.13 275 / 0.5); /* Brand blue focus for dark mode */
+  --chart-1: oklch(0.58 0.16 310); /* Lighter brand purple for dark mode */
+  --chart-2: oklch(0.56 0.13 275); /* Lighter brand blue for dark mode */
   --chart-3: oklch(0.985 0 0);
   --chart-4: oklch(0.269 0 0);
   --chart-5: oklch(0.145 0 0);
   --sidebar: oklch(0.205 0 0);
   --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.65 0.15 280);
+  --sidebar-primary: oklch(0.58 0.16 310); /* Lighter brand purple */
   --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.75 0.18 200);
+  --sidebar-accent: oklch(0.56 0.13 275); /* Lighter brand blue */
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(0.269 0 0);
-  --sidebar-ring: oklch(0.75 0.18 200 / 0.5);
+  --sidebar-ring: oklch(0.56 0.13 275 / 0.5); /* Brand blue focus */
 }
 
 @theme inline {
@@ -113,6 +128,13 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+
+  /* SUPAP Brand Colors for Tailwind */
+  --color-brand-purple: var(--brand-purple-oklch);
+  --color-brand-blue: var(--brand-blue-oklch);
+  --color-gradient-yellow: var(--gradient-yellow-oklch);
+  --color-gradient-turquoise: var(--gradient-turquoise-oklch);
+  --color-gradient-soft-yellow: var(--gradient-soft-yellow-oklch);
 }
 
 @layer base {
