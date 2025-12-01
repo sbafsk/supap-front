@@ -26,6 +26,38 @@ export const ACCION_PAIS_PAGE = {
       "Acción País es nuestra iniciativa para promover el desarrollo de políticas públicas en salud mental que reconozcan el potencial terapéutico de las psicoterapias asistidas.",
   },
 
+  nationalInitiative: {
+    badge: "INICIATIVA NACIONAL",
+    title: "Acción País por la Salud Mental",
+    description:
+      "Una iniciativa participativa nacional impulsada por el Ministerio de Salud Pública que busca construir compromisos concretos entre todos los actores vinculados a la salud mental en Uruguay.",
+    legalFramework: {
+      title: "Marco Legal",
+      description:
+        "La iniciativa se fundamenta en la Ley N° 19.529 de Salud Mental (2017), el Plan Nacional de Salud Mental 2020-2027, y la Estrategia Nacional de Salud Mental y Bienestar 2025-2030, enfatizando derechos humanos, equidad, participación comunitaria y coordinación intersectorial.",
+    },
+    thematicAreas: {
+      title: "Áreas Temáticas de Trabajo",
+      description: "La iniciativa organiza su trabajo en siete áreas de enfoque:",
+      areas: [
+        "Gobernanza y estructuras de liderazgo",
+        "Colaboración interinstitucional e intersectorial",
+        "Promoción y prevención en salud mental",
+        "Servicios de atención y tratamiento",
+        "Gestión de recursos humanos y desarrollo profesional",
+        "Sistemas de información y recopilación de datos en salud mental",
+        "Proyectos territoriales de base comunitaria",
+      ],
+    },
+    contact: {
+      title: "Información de Contacto",
+      ministry: "Ministerio de Salud Pública",
+      address: "18 de Julio 1892",
+      phone: "1934",
+      hours: "Lunes a Viernes, 9:00-15:00",
+    },
+  },
+
   objectives: {
     badge: "OBJETIVOS",
     title: "Objetivos de Acción País",

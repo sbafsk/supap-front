@@ -5,7 +5,7 @@ import { Footer } from "@/components/navigation/footer"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Download, Mail } from "lucide-react"
+import { Download, Mail, Phone, MapPin, Clock } from "lucide-react"
 import { ACCION_PAIS_PAGE } from "@/data/accionpais-content"
 
 export default function AccionPaisPage() {
@@ -50,8 +50,93 @@ export default function AccionPaisPage() {
         </div>
       </section>
 
-      {/* Objectives Section */}
+      {/* National Initiative Section */}
       <section className="py-20 md:py-28 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <Badge className="mx-auto mb-4 px-4 py-1.5 bg-secondary/10 text-secondary border-secondary/20">
+                {ACCION_PAIS_PAGE.nationalInitiative.badge}
+              </Badge>
+              <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground">
+                {ACCION_PAIS_PAGE.nationalInitiative.title}
+              </h2>
+              <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+                {ACCION_PAIS_PAGE.nationalInitiative.description}
+              </p>
+            </div>
+
+            {/* Legal Framework */}
+            <Card className="mb-8 border-0 shadow-lg">
+              <CardHeader>
+                <CardTitle className="text-xl">
+                  {ACCION_PAIS_PAGE.nationalInitiative.legalFramework.title}
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground leading-relaxed">
+                  {ACCION_PAIS_PAGE.nationalInitiative.legalFramework.description}
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Thematic Areas */}
+            <Card className="mb-8 border-0 shadow-lg">
+              <CardHeader>
+                <CardTitle className="text-xl">
+                  {ACCION_PAIS_PAGE.nationalInitiative.thematicAreas.title}
+                </CardTitle>
+                <CardDescription>
+                  {ACCION_PAIS_PAGE.nationalInitiative.thematicAreas.description}
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-3">
+                  {ACCION_PAIS_PAGE.nationalInitiative.thematicAreas.areas.map((area, idx) => (
+                    <li key={idx} className="flex items-start">
+                      <span className="inline-block w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0" />
+                      <span className="text-muted-foreground">{area}</span>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+
+            {/* Contact Information */}
+            <Card className="border-0 shadow-lg">
+              <CardHeader>
+                <CardTitle className="text-xl">
+                  {ACCION_PAIS_PAGE.nationalInitiative.contact.title}
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div>
+                  <p className="font-semibold text-foreground mb-4">
+                    {ACCION_PAIS_PAGE.nationalInitiative.contact.ministry}
+                  </p>
+                  <div className="space-y-3">
+                    <div className="flex items-center text-muted-foreground">
+                      <MapPin className="h-5 w-5 mr-3 text-primary flex-shrink-0" />
+                      <span>{ACCION_PAIS_PAGE.nationalInitiative.contact.address}</span>
+                    </div>
+                    <div className="flex items-center text-muted-foreground">
+                      <Phone className="h-5 w-5 mr-3 text-primary flex-shrink-0" />
+                      <span>{ACCION_PAIS_PAGE.nationalInitiative.contact.phone}</span>
+                    </div>
+                    <div className="flex items-center text-muted-foreground">
+                      <Clock className="h-5 w-5 mr-3 text-primary flex-shrink-0" />
+                      <span>{ACCION_PAIS_PAGE.nationalInitiative.contact.hours}</span>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Objectives Section */}
+      <section className="py-20 md:py-28 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-16 md:mb-20">
             <Badge className="mx-auto mb-4 px-4 py-1.5 bg-secondary/10 text-secondary border-secondary/20">
@@ -92,7 +177,7 @@ export default function AccionPaisPage() {
       </section>
 
       {/* Documents Section */}
-      <section className="py-20 md:py-28 bg-background">
+      <section className="py-20 md:py-28 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-16 md:mb-20">
             <Badge className="mx-auto mb-4 px-4 py-1.5 bg-accent/10 text-accent border-accent/20">
