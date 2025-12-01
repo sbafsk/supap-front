@@ -50,7 +50,7 @@ export default function ContactPage() {
           <div className="absolute top-1/2 right-1/4 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
         </div>
 
-        <div className="relative container mx-auto px-4 py-24 md:py-32">
+        <div className="relative container mx-auto px-6 lg:px-8 py-24 md:py-32">
           <div className="max-w-3xl mx-auto text-center space-y-6">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-balance leading-tight">
               {CONTACT_PAGE.hero.title}
@@ -64,7 +64,7 @@ export default function ContactPage() {
 
       {/* Contact Section */}
       <section className="py-20 md:py-28 bg-background">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {/* Contact Form */}
             <Card className="border-0 shadow-lg">
@@ -178,7 +178,7 @@ export default function ContactPage() {
 
       {/* CTA Section */}
       <section className="py-20 md:py-28 bg-gradient-to-br from-primary/5 to-secondary/5">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-6 lg:px-8">
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
               ¿Interesado en formar parte de SUPAP?

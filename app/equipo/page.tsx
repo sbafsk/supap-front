@@ -23,7 +23,7 @@ export default function TeamPage() {
           <div className="absolute top-1/2 right-1/4 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
         </div>
 
-        <div className="relative container mx-auto px-4 py-24 md:py-32">
+        <div className="relative container mx-auto px-6 lg:px-8 py-24 md:py-32">
           <div className="max-w-3xl mx-auto text-center space-y-6">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-balance leading-tight">
               {TEAM_PAGE.hero.title}
@@ -37,7 +37,7 @@ export default function TeamPage() {
 
       {/* Team Structure Section */}
       <section className="py-20 md:py-28 bg-background">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16 md:mb-20">
             <Badge className="mx-auto mb-4 px-4 py-1.5 bg-primary/10 text-primary border-primary/20">
               {TEAM_PAGE.structure.badge}
@@ -84,7 +84,7 @@ export default function TeamPage() {
       {/* Board Members Section */}
       {TEAM_PAGE.boardMembers.members.length > 0 && (
         <section className="py-20 md:py-28 bg-muted/30">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-6 lg:px-8">
             <div className="max-w-3xl mx-auto text-center mb-16 md:mb-20">
               <Badge className="mx-auto mb-4 px-4 py-1.5 bg-primary/10 text-primary border-primary/20">
                 {TEAM_PAGE.boardMembers.badge}
@@ -141,7 +141,7 @@ export default function TeamPage() {
 
       {/* Gallery Section */}
       <section id="gallery" className="py-20 md:py-28 bg-muted/30">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16 md:mb-20">
             <Badge className="mx-auto mb-4 px-4 py-1.5 bg-secondary/10 text-secondary border-secondary/20">
               {TEAM_PAGE.gallery.badge}
@@ -160,7 +160,7 @@ export default function TeamPage() {
 
       {/* Team Values Section */}
       <section className="py-20 md:py-28 bg-background">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16 md:mb-20">
             <Badge className="mx-auto mb-4 px-4 py-1.5 bg-primary/10 text-primary border-primary/20">
               {TEAM_PAGE.values.badge}
@@ -201,7 +201,7 @@ export default function TeamPage() {
 
       {/* Join Team CTA */}
       <section className="py-20 md:py-28 bg-gradient-to-br from-primary/5 to-secondary/5">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-6 lg:px-8">
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground">
               {TEAM_PAGE.cta.title}

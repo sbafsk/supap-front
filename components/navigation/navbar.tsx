@@ -26,7 +26,7 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-primary/10 transition-all">
-      <div className="container mx-auto px-4 py-4">
+      <div className="container mx-auto px-6 lg:px-8 py-4">
         <nav className="flex items-center justify-between" aria-label="Main navigation">
           <Link
             href="/"
