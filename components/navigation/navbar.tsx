@@ -2,9 +2,7 @@
 
 import { useState } from "react"
 import { usePathname } from "next/navigation"
-import { Button } from "@/components/ui/button"
 import { navLinks } from "@/data/nav-links"
-import { COMMON_LABELS } from "@/data/common-labels"
 import { Menu, X } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
@@ -63,9 +61,6 @@ export function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <Button size="sm" className="bg-secondary hover:bg-secondary/90">
-              {COMMON_LABELS.buttons.contact}
-            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -101,9 +96,6 @@ export function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <Button className="w-full bg-secondary hover:bg-secondary/90">
-              {COMMON_LABELS.buttons.contact}
-            </Button>
           </nav>
         )}
       </div>
