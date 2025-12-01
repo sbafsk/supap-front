@@ -13,6 +13,7 @@ export const FOOTER_CONTENT = {
   sections: {
     links: "Enlaces",
     contact: "Contacto",
+    partnerships: "Alianzas y Redes",
   },
 
   contact: {
@@ -20,6 +21,21 @@ export const FOOTER_CONTENT = {
     instagram: "@supap.uy",
     instagramUrl: "https://instagram.com/supap.uy",
     country: "Uruguay",
+  },
+
+  partnerships: {
+    fipe: {
+      name: "FIPE",
+      fullName: "Federación de Psicoterapeutas Integradores del Ecuador",
+      url: "https://www.psicodelicos.org/",
+      description: "Somos parte de FIPE",
+    },
+    minka: {
+      name: "Revista MINKA",
+      fullName: "Revista de la FIPE",
+      url: "https://www.instagram.com/revistaminka",
+      description: "Aliados de la revista MINKA",
+    },
   },
 
   copyright:

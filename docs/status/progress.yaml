@@ -1,6 +1,6 @@
-last_updated: "2025-11-30"
+last_updated: "2025-12-01"
 phase: "Content structure + New pages integration"
-completion_percentage: 35
+completion_percentage: 36
 
 completed_features:
   - id: "project_setup"
@@ -43,6 +43,10 @@ completed_features:
     status: "complete"
     completion_date: "2025-11-30"
     description: "Added Input and Label UI components for forms"
+  - id: "fipe_minka_partnerships"
+    status: "complete"
+    completion_date: "2025-12-01"
+    description: "Added FIPE and MINKA partnerships section to footer"
 
 current_priorities:
   - id: "brand_assets"
