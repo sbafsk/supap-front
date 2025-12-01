@@ -7,7 +7,7 @@ export function Footer() {
   return (
     <footer className="bg-foreground text-white py-12 md:py-16">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-3 gap-8 mb-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           <div>
             <div className="flex items-center gap-3 mb-4">
               <Image
@@ -65,6 +65,36 @@ export function Footer() {
                 </a>
               </p>
               <p>{FOOTER_CONTENT.contact.country}</p>
+            </div>
+          </div>
+
+          <div>
+            <h4 className="font-semibold mb-4 text-base">{FOOTER_CONTENT.sections.partnerships}</h4>
+            <div className="space-y-3 text-sm">
+              <div>
+                <p className="text-white/70 mb-1">{FOOTER_CONTENT.partnerships.fipe.description}</p>
+                <a
+                  href={FOOTER_CONTENT.partnerships.fipe.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white hover:text-white/70 transition-colors font-medium"
+                  title={FOOTER_CONTENT.partnerships.fipe.fullName}
+                >
+                  {FOOTER_CONTENT.partnerships.fipe.name}
+                </a>
+              </div>
+              <div>
+                <p className="text-white/70 mb-1">{FOOTER_CONTENT.partnerships.minka.description}</p>
+                <a
+                  href={FOOTER_CONTENT.partnerships.minka.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white hover:text-white/70 transition-colors font-medium"
+                  title={FOOTER_CONTENT.partnerships.minka.fullName}
+                >
+                  {FOOTER_CONTENT.partnerships.minka.name}
+                </a>
+              </div>
             </div>
           </div>
         </div>
