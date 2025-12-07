@@ -8,6 +8,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Badge } from "@/components/ui/badge"
+import { ScrollReveal } from "@/components/animations/scroll-reveal"
 import { GraduationCap, Lock, Mail, BookOpen, Video, FileText } from "lucide-react"
 
 export default function AulaVirtualPage() {
@@ -25,14 +26,14 @@ export default function AulaVirtualPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary/80 to-secondary text-white">
+      <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary/80 to-secondary text-white animate-fade-in">
         <div className="absolute inset-0">
           <div className="absolute -top-40 -right-40 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
           <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-secondary/20 rounded-full blur-3xl" />
           <div className="absolute top-1/2 right-1/4 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
         </div>
 
-        <div className="relative container mx-auto px-4 py-24 md:py-32">
+        <div className="relative container mx-auto px-6 lg:px-8 py-24 md:py-32">
           <div className="max-w-3xl mx-auto text-center space-y-6">
             <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6">
               <GraduationCap className="h-8 w-8 text-white" />
@@ -49,7 +50,8 @@ export default function AulaVirtualPage() {
 
       {/* Login Section */}
       <section className="py-20 md:py-28 bg-background">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-6 lg:px-8">
+          <ScrollReveal animation="scale-in">
           <div className="max-w-md mx-auto">
             <Card className="border-0 shadow-2xl">
               <CardHeader className="space-y-4 text-center pb-8">
@@ -129,12 +131,13 @@ export default function AulaVirtualPage() {
               </Button>
             </div>
           </div>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* Features Section */}
       <section className="py-20 md:py-28 bg-muted/30">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <Badge className="mx-auto mb-4 px-4 py-1.5 bg-primary/10 text-primary border-primary/20">
               CONTENIDO EDUCATIVO
@@ -197,7 +200,7 @@ export default function AulaVirtualPage() {
 
       {/* CTA Section */}
       <section className="py-20 md:py-28 bg-background">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-6 lg:px-8">
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground">
               ¿Te interesa participar?

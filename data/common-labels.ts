@@ -20,6 +20,9 @@ export const COMMON_LABELS = {
     requestCustomEvent: "Solicitar Evento Personalizado",
     upcomingEvents: "Próximos Eventos",
     subscribe: "Suscribirse",
+    viewMore: "Ver más",
+    viewAllServices: "Ver todos los servicios",
+    viewAllEvents: "Ver todos los eventos",
   },
 
   // Contact information

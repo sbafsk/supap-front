@@ -5,6 +5,7 @@ import { Footer } from "@/components/navigation/footer"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { ScrollReveal } from "@/components/animations/scroll-reveal"
 import { Calendar, MapPin, Users, Clock, Ticket, Mail } from "lucide-react"
 import { EVENTS_PAGE } from "@/data/events-content"
 import { COMMON_LABELS } from "@/data/common-labels"
@@ -15,14 +16,14 @@ export default function EventsPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary/80 to-secondary text-white">
+      <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary/80 to-secondary text-white animate-fade-in">
         <div className="absolute inset-0">
           <div className="absolute -top-40 -right-40 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
           <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-secondary/20 rounded-full blur-3xl" />
           <div className="absolute top-1/2 right-1/4 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
         </div>
 
-        <div className="relative container mx-auto px-4 py-24 md:py-32">
+        <div className="relative container mx-auto px-6 lg:px-8 py-24 md:py-32">
           <div className="max-w-3xl mx-auto text-center space-y-6">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-balance leading-tight">
               {EVENTS_PAGE.hero.title}
@@ -36,7 +37,8 @@ export default function EventsPage() {
 
       {/* Event Types Section */}
       <section className="py-20 md:py-28 bg-background">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-6 lg:px-8">
+          <ScrollReveal animation="fade-in-up">
           <div className="max-w-3xl mx-auto text-center mb-16 md:mb-20">
             <Badge className="mx-auto mb-4 px-4 py-1.5 bg-primary/10 text-primary border-primary/20">
               {EVENTS_PAGE.eventTypes.badge}
@@ -45,13 +47,14 @@ export default function EventsPage() {
               {EVENTS_PAGE.eventTypes.title}
             </h2>
           </div>
+          </ScrollReveal>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {EVENTS_PAGE.eventTypes.items.map((event, idx) => {
               const IconComponent = event.icon
               return (
+                <ScrollReveal key={idx} animation="fade-in-up" delay={(idx % 4 * 100) as 0 | 100 | 200 | 300}>
                 <Card
-                  key={idx}
                   className="border-0 shadow-lg hover:shadow-xl transition-all text-center"
                 >
                   <CardHeader>
@@ -66,6 +69,7 @@ export default function EventsPage() {
                     </CardDescription>
                   </CardContent>
                 </Card>
+                </ScrollReveal>
               )
             })}
           </div>
@@ -74,7 +78,7 @@ export default function EventsPage() {
 
       {/* Upcoming Events Section */}
       <section className="py-20 md:py-28 bg-muted/30">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16 md:mb-20">
             <Badge className="mx-auto mb-4 px-4 py-1.5 bg-secondary/10 text-secondary border-secondary/20">
               {EVENTS_PAGE.upcomingEvents.badge}
@@ -84,7 +88,7 @@ export default function EventsPage() {
             </h2>
           </div>
 
-          <div className="space-y-6">
+          <div className="space-y-6 max-w-4xl mx-auto">
             {EVENTS_PAGE.upcomingEvents.events.map((event) => (
               <Card
                 key={event.id}
@@ -172,7 +176,7 @@ export default function EventsPage() {
 
       {/* Newsletter Section */}
       <section className="py-20 md:py-28 bg-gradient-to-br from-primary/5 to-secondary/5">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-6 lg:px-8">
           <Card className="max-w-2xl mx-auto border-0 shadow-lg bg-background">
             <CardHeader className="text-center">
               <Badge className="mx-auto mb-4 px-4 py-1.5 bg-primary/10 text-primary border-primary/20">
@@ -201,7 +205,7 @@ export default function EventsPage() {
 
       {/* CTA Section */}
       <section className="py-20 md:py-28 bg-background">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-6 lg:px-8">
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground">
               {EVENTS_PAGE.cta.title}

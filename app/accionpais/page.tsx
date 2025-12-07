@@ -5,7 +5,8 @@ import { Footer } from "@/components/navigation/footer"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Download, Mail } from "lucide-react"
+import { ScrollReveal } from "@/components/animations/scroll-reveal"
+import { Download, Mail, Phone, MapPin, Clock } from "lucide-react"
 import { ACCION_PAIS_PAGE } from "@/data/accionpais-content"
 
 export default function AccionPaisPage() {
@@ -14,14 +15,14 @@ export default function AccionPaisPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary/80 to-secondary text-white">
+      <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary/80 to-secondary text-white animate-fade-in">
         <div className="absolute inset-0">
           <div className="absolute -top-40 -right-40 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
           <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-secondary/20 rounded-full blur-3xl" />
           <div className="absolute top-1/2 right-1/4 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
         </div>
 
-        <div className="relative container mx-auto px-4 py-24 md:py-32">
+        <div className="relative container mx-auto px-6 lg:px-8 py-24 md:py-32">
           <div className="max-w-3xl mx-auto text-center space-y-6">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-balance leading-tight">
               {ACCION_PAIS_PAGE.hero.title}
@@ -35,7 +36,8 @@ export default function AccionPaisPage() {
 
       {/* Intro Section */}
       <section className="py-20 md:py-28 bg-background">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-6 lg:px-8">
+          <ScrollReveal animation="fade-in-up">
           <div className="max-w-3xl mx-auto text-center">
             <Badge className="mx-auto mb-4 px-4 py-1.5 bg-primary/10 text-primary border-primary/20">
               {ACCION_PAIS_PAGE.intro.badge}
@@ -47,12 +49,98 @@ export default function AccionPaisPage() {
               {ACCION_PAIS_PAGE.intro.description}
             </p>
           </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* National Initiative Section */}
+      <section className="py-20 md:py-28 bg-muted/30">
+        <div className="container mx-auto px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <Badge className="mx-auto mb-4 px-4 py-1.5 bg-secondary/10 text-secondary border-secondary/20">
+                {ACCION_PAIS_PAGE.nationalInitiative.badge}
+              </Badge>
+              <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground">
+                {ACCION_PAIS_PAGE.nationalInitiative.title}
+              </h2>
+              <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+                {ACCION_PAIS_PAGE.nationalInitiative.description}
+              </p>
+            </div>
+
+            {/* Legal Framework */}
+            <Card className="mb-8 border-0 shadow-lg">
+              <CardHeader>
+                <CardTitle className="text-xl">
+                  {ACCION_PAIS_PAGE.nationalInitiative.legalFramework.title}
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground leading-relaxed">
+                  {ACCION_PAIS_PAGE.nationalInitiative.legalFramework.description}
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Thematic Areas */}
+            <Card className="mb-8 border-0 shadow-lg">
+              <CardHeader>
+                <CardTitle className="text-xl">
+                  {ACCION_PAIS_PAGE.nationalInitiative.thematicAreas.title}
+                </CardTitle>
+                <CardDescription>
+                  {ACCION_PAIS_PAGE.nationalInitiative.thematicAreas.description}
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-3">
+                  {ACCION_PAIS_PAGE.nationalInitiative.thematicAreas.areas.map((area, idx) => (
+                    <li key={idx} className="flex items-start">
+                      <span className="inline-block w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0" />
+                      <span className="text-muted-foreground">{area}</span>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+
+            {/* Contact Information */}
+            <Card className="border-0 shadow-lg">
+              <CardHeader>
+                <CardTitle className="text-xl">
+                  {ACCION_PAIS_PAGE.nationalInitiative.contact.title}
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div>
+                  <p className="font-semibold text-foreground mb-4">
+                    {ACCION_PAIS_PAGE.nationalInitiative.contact.ministry}
+                  </p>
+                  <div className="space-y-3">
+                    <div className="flex items-center text-muted-foreground">
+                      <MapPin className="h-5 w-5 mr-3 text-primary flex-shrink-0" />
+                      <span>{ACCION_PAIS_PAGE.nationalInitiative.contact.address}</span>
+                    </div>
+                    <div className="flex items-center text-muted-foreground">
+                      <Phone className="h-5 w-5 mr-3 text-primary flex-shrink-0" />
+                      <span>{ACCION_PAIS_PAGE.nationalInitiative.contact.phone}</span>
+                    </div>
+                    <div className="flex items-center text-muted-foreground">
+                      <Clock className="h-5 w-5 mr-3 text-primary flex-shrink-0" />
+                      <span>{ACCION_PAIS_PAGE.nationalInitiative.contact.hours}</span>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </section>
 
       {/* Objectives Section */}
-      <section className="py-20 md:py-28 bg-muted/30">
-        <div className="container mx-auto px-4">
+      <section className="py-20 md:py-28 bg-background">
+        <div className="container mx-auto px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16 md:mb-20">
             <Badge className="mx-auto mb-4 px-4 py-1.5 bg-secondary/10 text-secondary border-secondary/20">
               {ACCION_PAIS_PAGE.objectives.badge}
@@ -92,8 +180,8 @@ export default function AccionPaisPage() {
       </section>
 
       {/* Documents Section */}
-      <section className="py-20 md:py-28 bg-background">
-        <div className="container mx-auto px-4">
+      <section className="py-20 md:py-28 bg-muted/30">
+        <div className="container mx-auto px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16 md:mb-20">
             <Badge className="mx-auto mb-4 px-4 py-1.5 bg-accent/10 text-accent border-accent/20">
               {ACCION_PAIS_PAGE.content.badge}
@@ -156,7 +244,7 @@ export default function AccionPaisPage() {
 
       {/* CTA Section */}
       <section className="py-20 md:py-28 bg-gradient-to-br from-primary/5 to-secondary/5">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-6 lg:px-8">
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground">
               {ACCION_PAIS_PAGE.cta.title}

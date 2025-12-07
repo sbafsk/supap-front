@@ -5,6 +5,7 @@ import { Footer } from "@/components/navigation/footer"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { ScrollReveal } from "@/components/animations/scroll-reveal"
 import { CheckCircle } from "lucide-react"
 import { ABOUT_PAGE } from "@/data/about-content"
 import { COMMON_LABELS } from "@/data/common-labels"
@@ -15,14 +16,14 @@ export default function AboutPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary/80 to-secondary text-white">
+      <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary/80 to-secondary text-white animate-fade-in">
         <div className="absolute inset-0">
           <div className="absolute -top-40 -right-40 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
           <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-secondary/20 rounded-full blur-3xl" />
           <div className="absolute top-1/2 right-1/4 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
         </div>
 
-        <div className="relative container mx-auto px-4 py-24 md:py-32">
+        <div className="relative container mx-auto px-6 lg:px-8 py-24 md:py-32">
           <div className="max-w-3xl mx-auto text-center space-y-6">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-balance leading-tight">
               {ABOUT_PAGE.hero.title}
@@ -36,11 +37,12 @@ export default function AboutPage() {
 
       {/* Mission & Vision Section */}
       <section className="py-20 md:py-28 bg-background">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {/* Mission Card */}
-            <Card className="border-0 shadow-lg hover:shadow-xl transition-all">
-              <CardHeader className="bg-gradient-to-br from-primary/10 to-transparent pb-6">
+            <ScrollReveal animation="fade-in-up" delay={100}>
+            <Card className="bg-linear-to-br from-primary/10 to-transparent  border-0 shadow-lg hover:shadow-xl transition-all">
+              <CardHeader className="rounded-t-xl">
                 <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mb-4">
                   <ABOUT_PAGE.mission.icon className="h-6 w-6 text-primary" />
                 </div>
@@ -53,10 +55,12 @@ export default function AboutPage() {
                 </p>
               </CardContent>
             </Card>
+            </ScrollReveal>
 
             {/* Vision Card */}
-            <Card className="border-0 shadow-lg hover:shadow-xl transition-all">
-              <CardHeader className="bg-gradient-to-br from-secondary/10 to-transparent pb-6">
+            <ScrollReveal animation="fade-in-up" delay={200}>
+            <Card className="bg-linear-to-br from-secondary/10   to-transparent border-0 shadow-lg hover:shadow-xl transition-all">
+              <CardHeader className="rounded-t-xl">
                 <div className="w-12 h-12 bg-secondary/20 rounded-full flex items-center justify-center mb-4">
                   <ABOUT_PAGE.vision.icon className="h-6 w-6 text-secondary" />
                 </div>
@@ -69,13 +73,14 @@ export default function AboutPage() {
                 </p>
               </CardContent>
             </Card>
+            </ScrollReveal>
           </div>
         </div>
       </section>
 
       {/* History Section */}
       <section className="py-20 md:py-28 bg-muted/30">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16 md:mb-20">
             <Badge className="mx-auto mb-4 px-4 py-1.5 bg-primary/10 text-primary border-primary/20">
               {ABOUT_PAGE.history.badge}
@@ -124,7 +129,7 @@ export default function AboutPage() {
 
       {/* Objectives Section */}
       <section className="py-20 md:py-28 bg-background">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16 md:mb-20">
             <Badge className="mx-auto mb-4 px-4 py-1.5 bg-secondary/10 text-secondary border-secondary/20">
               {ABOUT_PAGE.objectives.badge}
@@ -163,7 +168,7 @@ export default function AboutPage() {
 
       {/* Values Section */}
       <section className="py-20 md:py-28 bg-muted/30">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16 md:mb-20">
             <Badge className="mx-auto mb-4 px-4 py-1.5 bg-accent/10 text-accent border-accent/20">
               {ABOUT_PAGE.values.badge}
@@ -190,7 +195,7 @@ export default function AboutPage() {
 
       {/* Partnership Section */}
       <section className="py-20 md:py-28 bg-background">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16 md:mb-20">
             <Badge className="mx-auto mb-4 px-4 py-1.5 bg-primary/10 text-primary border-primary/20">
               {ABOUT_PAGE.partnerships.badge}
@@ -227,7 +232,7 @@ export default function AboutPage() {
 
       {/* CTA Section */}
       <section className="py-20 md:py-28 bg-gradient-to-br from-primary/5 to-secondary/5">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-6 lg:px-8">
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground">
               {ABOUT_PAGE.cta.title}
