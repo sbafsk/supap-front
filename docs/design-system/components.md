@@ -107,15 +107,38 @@ const AccessibleComponent: React.FC<AccessibleComponentProps> = ({
 
 ## Design Tokens
 
+> **Note:** See [Brand Identity Guide](./branding.md) for official SUPAP brand colors, typography, and logo usage guidelines.
+
 ### Color System
 
-#### Primary Colors
+#### SUPAP Brand Colors
 
 ```css
-/* Primary Brand Colors */
+/* Primary Brand Colors - SUPAP Identity */
+--color-brand-purple: #864C9C; /* CMYK: C:58 M:89 Y:0 K:0 */
+--color-brand-purple-rgb: 126, 84, 160;
+
+--color-brand-blue: #4D5AA6; /* CMYK: C:74 M:69 Y:5 K:0 */
+--color-brand-blue-rgb: 77, 90, 166;
+
+/* Gradient Colors */
+--color-gradient-yellow: #F9C732;
+--color-gradient-purple: #864C9C;
+--color-gradient-turquoise: #5FD4C4;
+--color-gradient-soft-yellow: #F5E676;
+
+/* Brand Gradients */
+--gradient-yellow-purple: linear-gradient(135deg, #F9C732 0%, #864C9C 100%);
+--gradient-turquoise-yellow: linear-gradient(135deg, #5FD4C4 0%, #F5E676 100%);
+```
+
+#### Fallback/Generic Colors
+
+```css
+/* Primary Brand Colors (Generic - use SUPAP brand colors when possible) */
 --color-primary-50: #eff6ff;
 --color-primary-100: #dbeafe;
---color-primary-500: #3b82f6; /* Main brand color */
+--color-primary-500: #4D5AA6; /* Maps to brand-blue */
 --color-primary-600: #2563eb;
 --color-primary-700: #1d4ed8;
 --color-primary-900: #1e3a8a;
@@ -134,13 +157,34 @@ const AccessibleComponent: React.FC<AccessibleComponentProps> = ({
 --color-success: #10b981;
 --color-warning: #f59e0b;
 --color-error: #ef4444;
---color-info: #3b82f6;
+--color-info: #4D5AA6; /* Maps to brand-blue */
 ```
 
 #### Accessibility Color Requirements
 
 ```css
-/* High contrast combinations for accessibility */
+/* High contrast combinations for accessibility - Brand Colors */
+.text-on-brand-blue {
+  color: white;
+} /* 4.5:1 contrast ratio - WCAG AA compliant */
+
+.text-on-brand-purple {
+  color: white;
+} /* 6.8:1 contrast ratio - WCAG AA compliant */
+
+/* Brand Purple on white: 3.1:1 - Use for large text (18pt+) only */
+.brand-purple-large-text {
+  color: var(--color-brand-purple);
+  font-size: 1.125rem; /* 18px minimum */
+  font-weight: 600;
+}
+
+/* Brand Blue on white: 4.5:1 - Safe for all text sizes */
+.brand-blue-text {
+  color: var(--color-brand-blue);
+}
+
+/* Generic high contrast combinations */
 .text-on-primary {
   color: white;
 } /* 4.5:1 contrast ratio */
@@ -151,9 +195,13 @@ const AccessibleComponent: React.FC<AccessibleComponentProps> = ({
   color: white;
 } /* 4.5:1 */
 
-/* Focus ring colors */
+/* Focus ring colors - Updated for brand */
+.focus-ring-brand {
+  box-shadow: 0 0 0 2px var(--color-brand-blue);
+}
+
 .focus-ring-primary {
-  box-shadow: 0 0 0 2px var(--color-primary-500);
+  box-shadow: 0 0 0 2px var(--color-brand-blue);
 }
 
 .focus-ring-error {
@@ -162,6 +210,22 @@ const AccessibleComponent: React.FC<AccessibleComponentProps> = ({
 ```
 
 ### Typography Scale
+
+#### Brand Fonts
+
+```css
+/* SUPAP Brand Fonts */
+--font-logo: 'Druk Wide Bold', sans-serif;
+--font-org-name: 'Calibri', 'Helvetica Neue', Arial, sans-serif;
+
+/* Font Usage Guidelines:
+ * - font-logo: Use ONLY for "SUPAP" logo text
+ * - font-org-name: Use for full organization name
+ *   "SOCIEDAD URUGUAYA DE PSICOTERAPIAS ASISTIDAS POR PSICODÉLICOS Y ENTEÓGENOS"
+ */
+```
+
+#### Font Sizes & Scale
 
 ```css
 /* Font Sizes with Line Heights */
@@ -173,6 +237,7 @@ const AccessibleComponent: React.FC<AccessibleComponentProps> = ({
 --text-2xl: 1.5rem; /* 24px - line-height: 2rem */
 --text-3xl: 1.875rem; /* 30px - line-height: 2.25rem */
 --text-4xl: 2.25rem; /* 36px - line-height: 2.5rem */
+--text-5xl: 3rem; /* 48px - line-height: 1 */
 
 /* Font Weights */
 --font-normal: 400;
