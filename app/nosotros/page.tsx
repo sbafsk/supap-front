@@ -5,6 +5,7 @@ import { Footer } from "@/components/navigation/footer"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { ScrollReveal } from "@/components/animations/scroll-reveal"
 import { CheckCircle } from "lucide-react"
 import { ABOUT_PAGE } from "@/data/about-content"
 import { COMMON_LABELS } from "@/data/common-labels"
@@ -15,7 +16,7 @@ export default function AboutPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden   bg-linear-to-br from-primary via-primary/80 to-secondary text-white">
+      <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary/80 to-secondary text-white animate-fade-in">
         <div className="absolute inset-0">
           <div className="absolute -top-40 -right-40 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
           <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-secondary/20 rounded-full blur-3xl" />
@@ -39,6 +40,7 @@ export default function AboutPage() {
         <div className="container mx-auto px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {/* Mission Card */}
+            <ScrollReveal animation="fade-in-up" delay={100}>
             <Card className="bg-linear-to-br from-primary/10 to-transparent  border-0 shadow-lg hover:shadow-xl transition-all">
               <CardHeader className="rounded-t-xl">
                 <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mb-4">
@@ -53,8 +55,10 @@ export default function AboutPage() {
                 </p>
               </CardContent>
             </Card>
+            </ScrollReveal>
 
             {/* Vision Card */}
+            <ScrollReveal animation="fade-in-up" delay={200}>
             <Card className="bg-linear-to-br from-secondary/10   to-transparent border-0 shadow-lg hover:shadow-xl transition-all">
               <CardHeader className="rounded-t-xl">
                 <div className="w-12 h-12 bg-secondary/20 rounded-full flex items-center justify-center mb-4">
@@ -69,6 +73,7 @@ export default function AboutPage() {
                 </p>
               </CardContent>
             </Card>
+            </ScrollReveal>
           </div>
         </div>
       </section>

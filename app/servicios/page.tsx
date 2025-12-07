@@ -5,6 +5,7 @@ import { Footer } from "@/components/navigation/footer"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { ScrollReveal } from "@/components/animations/scroll-reveal"
 import { CheckCircle } from "lucide-react"
 import { SERVICES_PAGE } from "@/data/services-content"
 import { COMMON_LABELS } from "@/data/common-labels"
@@ -15,7 +16,7 @@ export default function ServicesPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary/80 to-secondary text-white">
+      <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary/80 to-secondary text-white animate-fade-in">
         <div className="absolute inset-0">
           <div className="absolute -top-40 -right-40 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
           <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-secondary/20 rounded-full blur-3xl" />
@@ -37,6 +38,7 @@ export default function ServicesPage() {
       {/* Main Services Section */}
       <section className="py-20 md:py-28 bg-background">
         <div className="container mx-auto px-6 lg:px-8">
+          <ScrollReveal animation="fade-in-up">
           <div className="max-w-3xl mx-auto text-center mb-16 md:mb-20">
             <Badge className="mx-auto mb-4 px-4 py-1.5 bg-primary/10 text-primary border-primary/20">
               {SERVICES_PAGE.mainServices.badge}
@@ -48,13 +50,14 @@ export default function ServicesPage() {
               {SERVICES_PAGE.mainServices.description}
             </p>
           </div>
+          </ScrollReveal>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {SERVICES_PAGE.mainServices.services.map((service, idx) => {
               const IconComponent = service.icon
               return (
+                <ScrollReveal key={idx} animation="fade-in-up" delay={(idx % 3 * 100) as 0 | 100 | 200}>
                 <Card
-                  key={idx}
                   className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group"
                 >
                   <CardHeader>
@@ -77,6 +80,7 @@ export default function ServicesPage() {
                     </ul>
                   </CardContent>
                 </Card>
+                </ScrollReveal>
               )
             })}
           </div>
