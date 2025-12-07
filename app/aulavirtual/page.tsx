@@ -8,6 +8,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Badge } from "@/components/ui/badge"
+import { ScrollReveal } from "@/components/animations/scroll-reveal"
 import { GraduationCap, Lock, Mail, BookOpen, Video, FileText } from "lucide-react"
 
 export default function AulaVirtualPage() {
@@ -25,7 +26,7 @@ export default function AulaVirtualPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary/80 to-secondary text-white">
+      <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary/80 to-secondary text-white animate-fade-in">
         <div className="absolute inset-0">
           <div className="absolute -top-40 -right-40 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
           <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-secondary/20 rounded-full blur-3xl" />
@@ -50,6 +51,7 @@ export default function AulaVirtualPage() {
       {/* Login Section */}
       <section className="py-20 md:py-28 bg-background">
         <div className="container mx-auto px-6 lg:px-8">
+          <ScrollReveal animation="scale-in">
           <div className="max-w-md mx-auto">
             <Card className="border-0 shadow-2xl">
               <CardHeader className="space-y-4 text-center pb-8">
@@ -129,6 +131,7 @@ export default function AulaVirtualPage() {
               </Button>
             </div>
           </div>
+          </ScrollReveal>
         </div>
       </section>
 

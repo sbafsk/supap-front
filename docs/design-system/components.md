@@ -654,6 +654,9 @@ const ResponsiveNav: React.FC = () => {
 ### Image Optimization
 
 ```typescript
+// Import Next.js Image component
+import Image from 'next/image';
+
 // Responsive image component
 interface ResponsiveImageProps {
   src: string;
@@ -670,19 +673,14 @@ const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
   className,
   loading = 'lazy'
 }) => (
-  <img
+  <Image
     src={src}
     alt={alt}
+    fill
     sizes={sizes}
     loading={loading}
     className={className}
-    // Add srcSet for different screen densities
-    srcSet={`
-      ${src}?w=400 400w,
-      ${src}?w=800 800w,
-      ${src}?w=1200 1200w,
-      ${src}?w=1600 1600w
-    `}
+    // Next.js Image automatically handles srcSet and optimization
   />
 );
 ```

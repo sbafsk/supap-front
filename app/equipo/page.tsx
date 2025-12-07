@@ -7,8 +7,10 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge"
 import { GalleryGrid } from "@/components/gallery/gallery-grid"
 import { galleryImages } from "@/data/gallery-images"
+import { ScrollReveal } from "@/components/animations/scroll-reveal"
 import { Mail } from "lucide-react"
 import { TEAM_PAGE } from "@/data/team-content"
+import Image from "next/image"
 
 export default function TeamPage() {
   return (
@@ -16,7 +18,7 @@ export default function TeamPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary/80 to-secondary text-white">
+      <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary/80 to-secondary text-white animate-fade-in">
         <div className="absolute inset-0">
           <div className="absolute -top-40 -right-40 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
           <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-secondary/20 rounded-full blur-3xl" />
@@ -38,6 +40,7 @@ export default function TeamPage() {
       {/* Team Structure Section */}
       <section className="py-20 md:py-28 bg-background">
         <div className="container mx-auto px-6 lg:px-8">
+          <ScrollReveal animation="fade-in-up">
           <div className="max-w-3xl mx-auto text-center mb-16 md:mb-20">
             <Badge className="mx-auto mb-4 px-4 py-1.5 bg-primary/10 text-primary border-primary/20">
               {TEAM_PAGE.structure.badge}
@@ -49,13 +52,14 @@ export default function TeamPage() {
               {TEAM_PAGE.structure.description}
             </p>
           </div>
+          </ScrollReveal>
 
           <div className="grid md:grid-cols-3 gap-8">
             {TEAM_PAGE.structure.items.map((item, idx) => {
               const IconComponent = item.icon
               return (
+                <ScrollReveal key={idx} animation="fade-in-up" delay={(idx * 100) as 0 | 100 | 200}>
                 <Card
-                  key={idx}
                   className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
                 >
                   <CardHeader>
@@ -75,6 +79,7 @@ export default function TeamPage() {
                     </div>
                   </CardContent>
                 </Card>
+                </ScrollReveal>
               )
             })}
           </div>
@@ -104,12 +109,14 @@ export default function TeamPage() {
                   className="border-0 shadow-lg hover:shadow-xl transition-all duration-300"
                 >
                   <CardHeader className="space-y-4">
-                    <div className="w-32 h-32 mx-auto rounded-full overflow-hidden bg-gradient-to-br from-primary/20 to-secondary/20">
+                    <div className="w-32 h-32 mx-auto rounded-full overflow-hidden bg-gradient-to-br from-primary/20 to-secondary/20 relative">
                       {member.image ? (
-                        <img
+                        <Image
                           src={member.image}
                           alt={member.name}
-                          className="w-full h-full object-cover"
+                          fill
+                          className="object-cover"
+                          sizes="128px"
                         />
                       ) : (
                         <div className="w-full h-full flex items-center justify-center text-4xl font-bold text-primary">

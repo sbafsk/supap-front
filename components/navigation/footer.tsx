@@ -34,7 +34,7 @@ export function Footer() {
                 <li key={link.id}>
                   <Link
                     href={link.href}
-                    className="text-white/70 hover:text-white transition-colors"
+                    className="text-white/70 hover:text-white transition-all duration-300 hover:translate-x-1 inline-block"
                   >
                     {link.label}
                   </Link>
@@ -49,7 +49,7 @@ export function Footer() {
               <p>
                 <a
                   href={`mailto:${FOOTER_CONTENT.contact.email}`}
-                  className="hover:text-white transition-colors"
+                  className="hover:text-white transition-all duration-300 hover:translate-x-1 inline-block"
                 >
                   {FOOTER_CONTENT.contact.email}
                 </a>
@@ -59,7 +59,7 @@ export function Footer() {
                   href={FOOTER_CONTENT.contact.instagramUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-white transition-colors"
+                  className="hover:text-white transition-all duration-300 hover:translate-x-1 inline-block"
                 >
                   {FOOTER_CONTENT.contact.instagram}
                 </a>
@@ -77,7 +77,7 @@ export function Footer() {
                   href={FOOTER_CONTENT.partnerships.fipe.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white hover:text-white/70 transition-colors font-medium"
+                  className="text-white hover:text-white/70 transition-all duration-300 hover:translate-x-1 inline-block font-medium"
                   title={FOOTER_CONTENT.partnerships.fipe.fullName}
                 >
                   {FOOTER_CONTENT.partnerships.fipe.name}
@@ -91,7 +91,7 @@ export function Footer() {
                   href={FOOTER_CONTENT.partnerships.minka.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white hover:text-white/70 transition-colors font-medium"
+                  className="text-white hover:text-white/70 transition-all duration-300 hover:translate-x-1 inline-block font-medium"
                   title={FOOTER_CONTENT.partnerships.minka.fullName}
                 >
                   {FOOTER_CONTENT.partnerships.minka.name}

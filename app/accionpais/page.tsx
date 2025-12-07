@@ -5,6 +5,7 @@ import { Footer } from "@/components/navigation/footer"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { ScrollReveal } from "@/components/animations/scroll-reveal"
 import { Download, Mail, Phone, MapPin, Clock } from "lucide-react"
 import { ACCION_PAIS_PAGE } from "@/data/accionpais-content"
 
@@ -14,7 +15,7 @@ export default function AccionPaisPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary/80 to-secondary text-white">
+      <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary/80 to-secondary text-white animate-fade-in">
         <div className="absolute inset-0">
           <div className="absolute -top-40 -right-40 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
           <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-secondary/20 rounded-full blur-3xl" />
@@ -36,6 +37,7 @@ export default function AccionPaisPage() {
       {/* Intro Section */}
       <section className="py-20 md:py-28 bg-background">
         <div className="container mx-auto px-6 lg:px-8">
+          <ScrollReveal animation="fade-in-up">
           <div className="max-w-3xl mx-auto text-center">
             <Badge className="mx-auto mb-4 px-4 py-1.5 bg-primary/10 text-primary border-primary/20">
               {ACCION_PAIS_PAGE.intro.badge}
@@ -47,6 +49,7 @@ export default function AccionPaisPage() {
               {ACCION_PAIS_PAGE.intro.description}
             </p>
           </div>
+          </ScrollReveal>
         </div>
       </section>
 

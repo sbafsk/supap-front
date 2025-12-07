@@ -8,6 +8,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
+import { ScrollReveal } from "@/components/animations/scroll-reveal"
 import { CONTACT_PAGE } from "@/data/contact-content"
 import { COMMON_LABELS } from "@/data/common-labels"
 
@@ -43,7 +44,7 @@ export default function ContactPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary/80 to-secondary text-white">
+      <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary/80 to-secondary text-white animate-fade-in">
         <div className="absolute inset-0">
           <div className="absolute -top-40 -right-40 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
           <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-secondary/20 rounded-full blur-3xl" />
@@ -67,6 +68,7 @@ export default function ContactPage() {
         <div className="container mx-auto px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {/* Contact Form */}
+            <ScrollReveal animation="fade-in-up" delay={100}>
             <Card className="border-0 shadow-lg">
               <CardHeader>
                 <CardTitle className="text-2xl text-primary">{CONTACT_PAGE.form.title}</CardTitle>
@@ -130,8 +132,10 @@ export default function ContactPage() {
                 </form>
               </CardContent>
             </Card>
+            </ScrollReveal>
 
             {/* Contact Information */}
+            <ScrollReveal animation="fade-in-up" delay={200}>
             <div className="space-y-8">
               <div>
                 <h2 className="text-2xl font-bold mb-4 text-foreground">
@@ -172,6 +176,7 @@ export default function ContactPage() {
                 })}
               </div>
             </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
